@@ -1,0 +1,83 @@
+﻿@model Queue.Models.WorkListData
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkListData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.worklistnumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.worklistnumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_permanetposition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_permanetposition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_dailyworkinghours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_dailyworkinghours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_wokinghousweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_wokinghousweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_workingdaysweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_workingdaysweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.f_dailyrestperiod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.f_dailyrestperiod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idworklistdata }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Queue.Models.WorkListData>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="box-header with-border">
+                <h4 class="box-title">Gegevens arbeidslijst</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        @*<a href="@Url.Action("Edit", "Employers",new { id = ViewBag.idemployer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                                <i class="fa fa-arrow-left"></i> Back
+                            </a>*@
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="col-md-2">
+                        <a href="@Url.Action("Create", "WorkListDatas",new { idemployer = ViewBag.idemployer })" class="btn btn-info float-right">
+                            @*<a onclick="WorkListViewCreate('@ViewBag.idemployer')" style="color:white" class="btn btn-info btn-block m-t-10 float-right">*@
+                            <i class="fa fa-plus"></i> Nieuwe werklijstgegevens
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Employer.registrationname)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.worklistnumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.WorkListCategory)
+                                </th>
+                                <th>Bewerk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Employer.registrationname)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.worklistnumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WorkListCategory.value)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", "WorkListDatas", new { id = item.idworklistdata })"><i class="fa fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+             var ms = '@ViewBag.message';
+            if (ms == "1") {
+                Swalsuccess()
+            }
+        });
+    </script>
+}

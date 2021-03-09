@@ -1,0 +1,89 @@
+﻿@model Queue.Models.WorkListData
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>WorkListData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.worklistnumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.worklistnumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_permanetposition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_permanetposition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_dailyworkinghours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_dailyworkinghours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_wokinghousweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_wokinghousweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.p_workingdaysweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.p_workingdaysweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.f_dailyrestperiod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.f_dailyrestperiod)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

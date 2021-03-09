@@ -1,0 +1,184 @@
+﻿@using Queue.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<div style="display:block" id="divlogin">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h3 class="box-title m-b-20">Sign In</h3>
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-info border-info"><i class="ti-user"></i></span>
+                </div>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control pl-15", @type = "text", @required = "", @placeholder = "Username" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-info border-info"><i class="ti-lock"></i></span>
+                </div>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control pl-15", @type = "password", @required = "", @placeholder = "Password" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="d-flex no-block align-items-center">
+                <div class="checkbox checkbox-primary p-t-0">
+                    <input id="checkbox-signup" type="checkbox">
+                    <label for="checkbox-signup"> Remember me </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+                <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-6">
+            <div class="checkbox">
+
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-6">
+            <div class="fog-pwd text-right">
+                <a onclick="forgot()" href="javascript:void(0)"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-12 text-center">
+
+        </div>
+        <!-- /.col -->
+    </div>
+</div>
+<div style="display:none" id="divforgot">
+    @using (Html.BeginForm("ForgotPassword", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h3 class="box-title m-b-20">Forgot Password</h3>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-info border-info"><i class="ti-user"></i></span>
+                </div>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control pl-15", @type = "text", @required = "", @placeholder = "Username" })
+            </div>
+        </div>
+
+        <div class="form-group text-center m-t-20">
+            <div class="col-xs-12">
+                <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" onclick="block()" type="submit">Send</button>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+
+        var set_cookie = false;
+        $(document).ready(function () {
+            isCookieSet()
+        });
+        function forgot() {
+            $("#divlogin").css("display", "none");
+            $("#divforgot").css("display", "block");
+        }
+        function block() {
+            blockelement('#divlogincontainer')
+        }
+
+        function blockelement(el) {
+
+            $(el).block(
+                {
+                    message: '',
+                    css: {
+                        border: 'none',
+                        padding: '15px',
+                        backgroundColor: '#000',
+                        '-webkit-border-radius': '10px',
+                        '-moz-border-radius': '10px',
+                        opacity: .5,
+                        color: '#fff',
+                        top: ($(window).height() - 400) / 2 + 'px',
+                        left: ($(window).width() - 400) / 2 + 'px',
+                    }
+                });
+        }
+
+        $('#checkbox-signup').click(function () {
+            if ($(this).is(':checked')) {
+                setCookie(true)
+            }
+            else {
+                setCookie(false)
+            }
+        });
+
+        function setCookie(set_cookie) {
+            if (set_cookie) {
+                var d = new Date();
+                d.setTime(d.getTime() + (100 * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = "c_username=" + $('#Input_Email').val();
+                document.cookie = "c_password=" + $('#Input_Password').val();
+                document.cookie = expires + ";path=/";
+            }
+            else {
+                var expires = "expires=0"
+                document.cookie = "c_username=0"
+                document.cookie = "c_password=0"
+                document.cookie = expires + ";path=/";
+            }
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        };
+
+        function isCookieSet() {
+            var _username = getCookie("c_username");
+            var _password = getCookie("c_password");
+
+            if (_username != "0" && _username != "" && _password != "0" && _password != "") {
+                $('#Input_Email').val(getCookie("c_username"));
+                $('#Input_Password').val(getCookie("c_password"));
+                $('#checkbox-signup').prop("checked", "checked");
+                set_cookie = true;
+            }
+        }
+    </script>
+}

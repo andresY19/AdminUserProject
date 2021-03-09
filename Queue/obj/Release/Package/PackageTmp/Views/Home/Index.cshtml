@@ -1,0 +1,845 @@
+﻿
+@{
+
+    ViewBag.Title = "Home Page";
+
+}
+
+<!-- chartist CSS -->
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/css-chart/css-chart.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+<link href="~/TemplateAssets/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+
+
+<!--This page css - Morris CSS -->
+<link href="~/TemplateAssets/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Set the stats view</h4>
+                <div class="card-body">
+                    <div class="row button-group">
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_today" onclick="setStatsView('today')" class="btn btn-block btn-outline-info">Today</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_week" onclick="setStatsView('week')" class="btn btn-block btn-outline-success">This week</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_month" onclick="setStatsView('month')" class="btn btn-block btn-outline-primary">This Month</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_3months" onclick="setStatsView('3months')" class="btn btn-block btn-outline-danger">Last 3 months</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_6months" onclick="setStatsView('6months')" class="btn btn-block btn-outline-secondary">Last 6 months</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_year" onclick="setStatsView('Year')" class="btn btn-block btn-outline-warning">Last Year</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center" id="first_row_today">
+    <div class="col-lg-4 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Our Customers</h3>
+                <h6 class="card-subtitle">Different Tickets</h6>
+                <div id="our_tickets" style="height:260px; width:100%;"></div>
+            </div>
+            <div>
+                <hr class="m-t-0 m-b-0">
+            </div>
+            @*<div class="card-body text-center ">
+                    <ul class="list-inline m-b-0">
+                        <li>
+                            <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10 "></i>Mobile</h6>
+                        </li>
+                        <li>
+                            <h6 class="text-muted  text-primary"><i class="fa fa-circle font-10 m-r-10"></i>Desktop</h6>
+                        </li>
+                        <li>
+                            <h6 class="text-muted  text-success"><i class="fa fa-circle font-10 m-r-10"></i>Tablet</h6>
+                        </li>
+                    </ul>
+                </div>*@
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div id="" style="height:330px; width:100%;">
+                    <h3 class="card-title">Total Tickets</h3>
+                    <hr>
+                    <br />
+                    <div class="row justify-content-center m-t-10">
+
+                        <h1 class="m-b-0 font-light bigger-font-70 text-center" id='total_tickets'></h1>
+                    </div>
+                    <br />
+                    <div id="waiting_ticket_number">
+                        <h3 class="card-title m-t-10">Waiting Tickets</h3>
+                        <hr>
+                        <div class="row justify-content-center m-t-30">
+                            <br>
+                            <br>
+                            <h1 class="m-b-0 font-light bigger-font-70 text-center" id='total_waiting_tickets'></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <hr class="m-t-0 m-b-0">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div id="" style="height:330px; width:100%;">
+                    <h3 class="card-title">Avg. Waiting Time</h3>
+                    <hr>
+                    <br />
+                    <div class="row justify-content-center m-t-10">
+                        <h1 class="m-b-0 font-light bigger-font-70 text-center" id='total_waiting_time'></h1>
+                    </div>
+                    <br />
+                    <h3 class="card-title m-t-10">Avg. Attending Time</h3>
+                    <hr>
+                    <div class="row justify-content-center m-t-30">
+                        <br>
+                        <h1 class="m-b-0 font-light bigger-font-70 text-center" id='total_attending_time'></h1>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <hr class="m-t-0 m-b-0">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center" id="waiting_line_row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Waiting line </h4>
+                <h6 class="card-subtitle">Our tickets divided by Services</h6>
+                <div class="row" id="waiting_line_services">
+
+                    @*<div class="col-md-6 col-lg-2">
+                            <div class="card card-body">
+                                <!-- Row -->
+                                <div class="row justify-content-center">
+                                    <!-- Column -->
+                                    <div class="col-12 text-center">
+                                        <h2 class="font-light m-b-0">4</h2>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <h6 class="text-muted">B2B</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Tickets resume</h4>
+                <h6 class="card-subtitle">Our tickets at this moment</h6>
+                <div class="card-group" id="tickets_resume">
+                    @*<div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3>86%</h3>
+                                        <h6 class="card-subtitle">Tickets Attended</h6>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Services </h4>
+                <h6 class="card-subtitle">Our tickets divided by Services</h6>
+                <div class="row" id="service_detail">
+                    <!-- Column -->
+                    @*<div class="col-md-6 col-lg-3">
+                            <div class="card card-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <!-- Column -->
+                                    <div class="col p-r-0 align-self-center">
+                                        <h2 class="font-light m-b-0">324</h2>
+                                        <h6 class="text-muted">AirBnB</h6>
+                                    </div>
+                                    <!-- Column -->
+                                    <div class="col text-right align-self-center">
+                                        <div data-label="20%" class="css-bar m-b-0 css-bar-info css-bar-20"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Column -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex no-block">
+                    <h4 class="card-title">Users stats</h4>
+                </div>
+                <h6 class="card-subtitle">@DateTime.Now</h6>
+                <div class="table-responsive">
+                    <table class="table stylish-table">
+                        <thead id="user_stats_thead">
+
+                        </thead>
+                        <tbody id="user_stats_tbody">
+
+                            @*<tr>
+                                    <td> <h6>User1 </h6></td>
+                                    <td>
+                                        <h6 class="text-center">24</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="text-center">5 Mins 36 Secs</h6>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">2</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">8</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">9</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">10</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">6</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">3</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                    <td class="text-center">
+                                        <h5 class="text-center">1</h5>
+                                        <small class="text-muted text-center">Avg. time 5'' </small>
+                                    </td>
+                                </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap">
+                            <div>
+                                <h3 class="card-title">Tickets by Period</h3>
+                                <h6 class="card-subtitle">Tickets Across Periods</h6>
+                            </div>
+                            <div class="ml-auto">
+                                <ul class="list-inline">
+                                    <li>
+                                        <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10 "></i>Tickets</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="tickets_by_period" style="height: 360px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    @section Scripts {
+
+        <!-- chartist chart -->
+        @*<script src="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist.min.js"></script>o
+        <script src="~/TemplateAssets/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>*@
+
+        <!--c3 JavaScript -->
+        @*<script src="~/TemplateAssets/assets/plugins/d3/d3.min.js"></script>
+        <script src="~/TemplateAssets/assets/plugins/c3-master/c3.min.js"></script>*@
+
+        <!-- Vector map JavaScript -->
+        @*<script src="~/TemplateAssets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="~/TemplateAssets/assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="~/TemplateAssets/assets/plugins/raphael/raphael-min.js"></script>
+        <script src="~/TemplateAssets/assets/plugins/morrisjs/morris.js"></script>
+        <script src="~/TemplateAssets/material/js/dashboard1.js"></script>
+        <script src="~/TemplateAssets/material/js/dashboard3.js"></script>*@
+
+
+
+        @*<script>
+        var a = []
+        var b = []
+        var _time_search_global = "today"
+            $(document).ready(function () {
+                $('#btn_today').trigger('click');
+            });
+            var TicketServices = [];
+
+            function setStatsView(_time_to_search) {
+                if (_time_to_search != "today") {
+                    $('#waiting_line_row').addClass('d-none')
+                    $('#waiting_ticket_number').addClass('d-none')
+
+                } else {
+                    $('#waiting_line_row').removeClass('d-none')
+                    $('#waiting_ticket_number').removeClass('d-none')
+                }
+                _time_search_global = _time_to_search
+                TodayTicketsFirstRow(_time_search_global);
+                WaitingLineServices(_time_search_global);
+                TicketsResume(_time_search_global);
+                ServicesDetail(_time_search_global);
+                UserStats(_time_search_global);
+                ChartByPeriods(_time_search_global)
+            }
+        function TodayTicketsFirstRow(_time_search_global) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("TodayTicketsFirstRow", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (data) {
+                    if (data) {
+                        $("#total_tickets").text(data.TotalTickets);
+                        $("#total_waiting_tickets").text(data.WaitingTickets);
+                        minTommss(data.WaitingTime, "FirstRow")
+                        minTommss(data.AttendingTime, "FirstRowAttending")
+                        //ShowDonutchart(data.TicketServices)
+                        $.each(data.TicketServices, function (i, item) {
+                            b.push(item.Service)
+                            b.push(item.Quantity)
+                            a.push(b)
+                            b = []
+
+                        })
+
+                        $(function () {
+                            "use strict";
+                            // ==============================================================
+                            // Newsletter
+                            // ==============================================================
+
+                            var chart = new Chartist.Line('.campaign', {
+                                labels: [1, 2, 3, 4, 5, 6, 7, 8],
+                                series: [
+                                    [0, 5, 6, 8, 25, 9, 8, 24]
+                                    , [0, 3, 1, 2, 8, 1, 5, 1]
+                                ]
+                            }, {
+                                    low: 0,
+                                    high: 28,
+                                    showArea: true,
+                                    fullWidth: true,
+                                    plugins: [
+                                        Chartist.plugins.tooltip()
+                                    ],
+                                    axisY: {
+                                        onlyInteger: true
+                                        , scaleMinSpace: 40
+                                        , offset: 20
+                                        , labelInterpolationFnc: function (value) {
+                                            return (value / 1) + 'k';
+                                        }
+                                    },
+                                });
+
+                            // Offset x1 a tiny amount so that the straight stroke gets a bounding box
+                            // Straight lines don't get a bounding box
+                            // Last remark on -> http://www.w3.org/TR/SVG11/coords.html#ObjectBoundingBox
+                            chart.on('draw', function (ctx) {
+                                if (ctx.type === 'area') {
+                                    ctx.element.attr({
+                                        x1: ctx.x1 + 0.001
+                                    });
+                                }
+                            });
+                            // Create the gradient definition on created event (always after chart re-render)
+                            chart.on('created', function (ctx) {
+                                var defs = ctx.svg.elem('defs');
+                                defs.elem('linearGradient', {
+                                    id: 'gradient',
+                                    x1: 0,
+                                    y1: 1,
+                                    x2: 0,
+                                    y2: 0
+                                }).elem('stop', {
+                                    offset: 0,
+                                    'stop-color': 'rgba(255, 255, 255, 1)'
+                                }).parent().elem('stop', {
+                                    offset: 1,
+                                    'stop-color': 'rgba(38, 198, 218, 1)'
+                                });
+                            });
+                            var chart = [chart];
+
+                            // ==============================================================
+                            // This is for the animation
+                            // ==============================================================
+
+                            for (var i = 0; i < chart.length; i++) {
+                                chart[i].on('draw', function (data) {
+                                    if (data.type === 'line' || data.type === 'area') {
+                                        data.element.animate({
+                                            d: {
+                                                begin: 500 * data.index,
+                                                dur: 500,
+                                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                                to: data.path.clone().stringify(),
+                                                easing: Chartist.Svg.Easing.easeInOutElastic
+                                            }
+                                        });
+                                    }
+                                    if (data.type === 'bar') {
+                                        data.element.animate({
+                                            y2: {
+                                                dur: 500,
+                                                from: data.y1,
+                                                to: data.y2,
+                                                easing: Chartist.Svg.Easing.easeInOutElastic
+                                            },
+                                            opacity: {
+                                                dur: 500,
+                                                from: 0,
+                                                to: 1,
+                                                easing: Chartist.Svg.Easing.easeInOutElastic
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+
+                            // ==============================================================
+                            // Our our_tickets
+                            // ==============================================================
+
+                            var chart = c3.generate({
+                                bindto: '#our_tickets',
+                                data: {
+                                    columns: a,
+
+                                    type: 'donut',
+                                    onclick: function (d, i) { console.log("onclick", d, i); },
+                                    onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                                    onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                                },
+                                donut: {
+                                    label: {
+                                        show: false
+                                    },
+                                    title: "Our visitor",
+                                    width: 20,
+                                },
+                                legend: {
+                                    hide: true
+                                    //or hide: 'data1'
+                                    //or hide: ['data1', 'data2']
+                                },
+                                color: {
+                                    pattern: ['#ffe000', '#67757c','#745af2', '#26c6da', '#1e88e5']
+                                }
+                            });
+                        });
+                    }
+
+                }
+            })
+        }
+
+        //function ticksToDateString(ticks, section) {
+        //    var epochTicks = 621355968000000000;
+        //    var ticksPerMillisecond = 10000; // whoa!
+        //    var maxDateMilliseconds = 8640000000000000; // via http://ecma-international.org/ecma-262/5.1/#sec-15.9.1.1
+        //    var congratulationsTimer;
+        //    if (isNaN(ticks)) {
+        //        //      0001-01-01T00:00:00.000Z
+        //        return "NANA-NA-NATNA:NA:BA.TMAN";
+        //    }
+
+        //    // convert the ticks into something javascript understands
+        //    var ticksSinceEpoch = ticks - epochTicks;
+        //    var millisecondsSinceEpoch = ticksSinceEpoch / ticksPerMillisecond;
+
+        //    if (millisecondsSinceEpoch > maxDateMilliseconds) {
+        //        //      +035210-09-17T07:18:31.111Z
+        //        return "+WHOAWH-OA-ISTOO:FA:RA.WAYZ";
+        //    }
+
+        //    // output the result in something the human understands
+        //    var date = new Date(millisecondsSinceEpoch);
+        //    var dateToShow = date.toISOString()
+        //    var mydate = new Date(dateToShow);
+        //    if (section == "FirstRow") {
+        //        $('#total_waiting_time').text(mydate.getUTCMinutes() + "m " + mydate.getUTCSeconds() + "s")
+
+        //    }
+        //    else if (section == "FirstRowAttending") {
+        //        $('#total_attending_time').text(mydate.getUTCMinutes() + "m " + mydate.getUTCSeconds() + "s")
+        //    }
+        //    else if (section == "TotalAvgTime") {
+        //        return mydate.getUTCMinutes() + "m " + mydate.getUTCSeconds() + "s"
+        //    }
+        //    else if (section == "IndividualService") {
+        //        return "Avg.: "+ mydate.getUTCMinutes()+"''"
+        //    }
+        //};
+
+        function WaitingLineServices(_time_search_global) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("WaitingLineServices", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (data) {
+                    if (data) {
+                        $('#waiting_line_services').empty()
+                        var _waiting_services = ''
+                        $.each(data, function (i, item) {
+                            _waiting_services += "<div class='col-md-6 col-lg-2'>";
+                            _waiting_services += "<div class='card card-body'>";
+                            _waiting_services += "<div class='row justify-content-center'>";
+                            _waiting_services += "<div class='col-12 text-center'>";
+                            _waiting_services += "<h2 class='font-light m-b-0'>" + item.Quantity +"</h2>";
+                            _waiting_services += "</div>";
+                            _waiting_services += "<div class='col-12 text-center'>";
+                            _waiting_services += "<h6 class='text-muted'>" + item.Service+"</h6>";
+                            _waiting_services += "</div>";
+                            _waiting_services += "</div>";
+                            _waiting_services += "</div>";
+                            _waiting_services += "</div>";
+                        })
+                        $('#waiting_line_services').html(_waiting_services)
+
+                    }
+
+                }
+            })
+        }
+
+        function TicketsResume(_time_search_global) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("TicketsResume", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (data) {
+                    if (data) {
+                        var total_tickets = 0;
+                        var _class=''
+                        $('#tickets_resume').empty()
+                        var _tickets_resume = ''
+                        $.each(data, function (i, item) {
+                            total_tickets += item.Quantity;
+                        })
+                        $.each(data, function (i, item) {
+                            if (item.Service == "No Show") {
+                                _class = "progress-bar bg-inverse"
+                            }
+                            if (item.Service == "Attended") {
+                                _class = "progress-bar bg-success"
+                            }
+                            if (item.Service == "Waiting") {
+                                _class = "progress-bar bg-danger"
+                            } if (item.Service == "Attending") {
+                                _class = "progress-bar bg-info"
+                            }
+
+                            _tickets_resume += "<div class='card'>";
+                            _tickets_resume += "<div class='card-body'>";
+                            _tickets_resume += "<div class='row'>";
+                            _tickets_resume += "<div class='col-12'>";
+                            _tickets_resume += "<h3>" + percentage(total_tickets, item.Quantity)+"%</h3>";
+                            _tickets_resume += "<h6 class='card-subtitle'>" + item.Service + ": " + item.Quantity +"</h6>";
+                            _tickets_resume += "</div>";
+                            _tickets_resume += "<div class='col-12'>";
+                            _tickets_resume += "<div class='progress'>";
+                            _tickets_resume += "<div class='"+_class+"' role='progressbar' style='width: "+ percentage(total_tickets, item.Quantity)+"%; height: 6px;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>";
+                            _tickets_resume += "</div>";
+                            _tickets_resume += "</div>";
+                            _tickets_resume += "</div>";
+                            _tickets_resume += "</div>";
+                            _tickets_resume += "</div>";
+                        })
+                        $('#tickets_resume').html(_tickets_resume)
+                    }
+                }
+            })
+        }
+
+
+        function ServicesDetail(_time_search_global)
+        {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ServicesDetail", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (data) {
+                    if (data) {
+                        var total_tickets = 0;
+                        var _percentage = 0;
+                        var _class=''
+                        $('#service_detail').empty()
+                        var _service_detail = ''
+                        $.each(data, function (i, item) {
+                            total_tickets += item.Quantity;
+                        })
+
+                        $.each(data, function (i, item) {
+
+                            _percentage = percentage(total_tickets, item.Quantity)
+
+                            if (_percentage <= 10) {
+                                _class = "css-bar-danger css-bar-10"
+                            }
+                            else if (_percentage > 10 && _percentage <= 20) {
+                                _class = "css-bar-danger css-bar-20"
+                            }
+                            else if (_percentage > 20 && _percentage <= 30) {
+                                _class = "css-bar-warning css-bar-30"
+                            }
+                            else if (_percentage > 30 && _percentage <= 40) {
+                                _class = "css-bar-warning css-bar-40"
+                            }
+                            else if (_percentage > 40 && _percentage <= 50) {
+                                _class = "css-bar-info css-bar-50"
+                            }
+                            else if (_percentage > 50 && _percentage <= 60) {
+                                _class = "css-bar-info css-bar-60"
+                            }
+                            else if (_percentage > 60 && _percentage <= 70) {
+                                _class = "css-bar-success css-bar-70"
+                            }
+                            else if (_percentage > 70 && _percentage <= 80) {
+                                _class = "css-bar-success css-bar-80"
+                            }
+                            else if (_percentage > 80 && _percentage <= 90) {
+                                _class = "css-bar-success css-bar-90"
+                            }
+                            else if (_percentage > 90 && _percentage <= 100) {
+                                _class = "css-bar-success css-bar-100"
+                            }
+                            else {
+                                _class = "css-bar-100"
+                            }
+
+                            _service_detail +="<div class='col-md-6 col-lg-3'>";
+                            _service_detail +="<div class='card card-body'>";
+                            _service_detail +="<div class='row'>";
+                            _service_detail +="<div class='col p-r-0 align-self-center'>";
+                            _service_detail +="<h2 class='font-light m-b-0'>"+item.Quantity+"</h2>";
+                            _service_detail +="<h6 class='text-muted'>"+item.Service+"</h6>";
+                            _service_detail +="</div>";
+                            _service_detail +="<div class='col text-right align-self-center'>";
+                            _service_detail +="<div data-label='"+_percentage+"%' class='css-bar m-b-0 "+_class+"'></div>";
+                            _service_detail +="</div>";
+                            _service_detail +="</div>";
+                            _service_detail +="</div>";
+                            _service_detail += "</div>";
+
+
+                        })
+                        $('#service_detail').html(_service_detail)
+
+                    }
+                }
+            })
+        }
+
+        function UserStats(_time_search_global) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("UserStats", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (data) {
+                    if (data) {
+                        var total_tickets = 0;
+                        var _class = ''
+
+                        var _user_stats_thead = ''
+                        _user_stats_thead += "<tr>";
+                        _user_stats_thead += "<th>User</th>";
+                        _user_stats_thead += "<th class='text-center'>Total Tickets</th>";
+                        _user_stats_thead += "<th class='text-center'>Avg. Attending Time</th>";
+                        $.each(data[0].UserServiceInfo, function (i, item) {
+                            _user_stats_thead += "<th class='text-center'>" + item.Service + "</th>";
+                        })
+                        _user_stats_thead += "</tr>";
+                        $('#user_stats_thead').html(_user_stats_thead)
+
+                        var _user_stats_tbody = "";
+                        $.each(data, function (i, item) {
+
+                            if (item.TotalTickets != 0) {
+
+                                _user_stats_tbody += "<tr>"
+                                _user_stats_tbody += "<td> <h6>" + item.UserName + " </h6></td>"
+                                _user_stats_tbody += "<td>"
+                                _user_stats_tbody += "<h6 class='text-center'>" + item.TotalTickets + "</h6>"
+                                _user_stats_tbody += "</td>"
+                                _user_stats_tbody += "<td>"
+                                if (item.AvgAttendingTime != "") {
+                                    _user_stats_tbody += "<h6 class='text-center'>" + minTommss(item.AvgAttendingTime, "TotalAvgTime") + "</h6>"
+                                    //_user_stats_tbody += "<h6 class='text-center'>" + moment.duration(item.AvgAttendingTime, 'minutes') + "</h6>"
+                                    
+                                }
+                                else {
+                                    _user_stats_tbody += "<h6 class='text-center'>-</h6>"
+                                }
+                                _user_stats_tbody += "</td>"
+                                $.each(item.UserServiceInfo, function (x, serv) {
+                                    _user_stats_tbody += "<td class='text-center'>"
+                                    if (serv.Quantity != 0) {
+                                        _user_stats_tbody += "<h5 class='text-center'>" + serv.Quantity + "</h5>"
+                                        _user_stats_tbody += "<small class='text-muted text-center'>" + minTommss(serv.Average, "IndividualService") + "</small>"
+                                    }
+                                    else {
+                                        _user_stats_tbody += "<h5 class='text-center'>-</h5>"
+                                        _user_stats_tbody += "<small class='text-muted text-center'></small>"
+                                    }
+                                    _user_stats_tbody += "</td>"
+                                })
+                                _user_stats_tbody += "</tr>"
+                            }
+                        })
+                        $('#user_stats_tbody').html(_user_stats_tbody)
+                    }
+                }
+            })
+        }
+
+        function ChartByPeriods(_time_search_global) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ChartByPeriods", "Home")?timeSearch=' + _time_search_global,
+                // Some params omitted
+                success: function (Tickets) {
+                    if (Tickets) {
+                        $('.tickets_by_periods').empty()
+
+                        fillCharts(Tickets)
+                        //$(function () {
+                        //    "use strict";
+                        //    var line = new Morris.Line({
+                        //        element: 'tickets_by_periods',
+                        //        resize: true,
+                        //        //data: Tickets,
+                        //        data: [
+                        //            { y: '2011 Q1', item1: 2666 },
+                        //            { y: '2011 Q2', item1: 2778 },
+                        //            { y: '2011 Q3', item1: 4912 },
+                        //            { y: '2011 Q4', item1: 3767 },
+                        //            { y: '2012 Q1', item1: 6810 },
+                        //            { y: '2012 Q2', item1: 5670 },
+                        //            { y: '2012 Q3', item1: 4820 },
+                        //            { y: '2012 Q4', item1: 15073 },
+                        //            { y: '2013 Q1', item1: 10687 },
+                        //            { y: '2013 Q2', item1: 8432 }
+                        //        ],
+                        //        //xkey: 'Quantity',
+                        //        //ykeys: ['Period'],
+                        //        //labels: ['Tickets'],
+                        //        xkey: 'y',
+                        //        ykeys: ['item1'],
+                        //        labels: ['Item 1'],
+                        //        gridLineColor: '#eef0f2',
+                        //        lineColors: ['#009efb'],
+                        //        lineWidth: 1,
+                        //        hideHover: 'auto'
+                        //    });
+                        //});
+
+                    }
+                }
+            })
+        }
+
+        function percentage(oldNumber, newNumber) {
+            var decreaseValue = oldNumber - newNumber;
+            var x = (decreaseValue / oldNumber) * 100;
+            return parseInt(100 - x);
+
+            }
+
+            function minTommss(minutes, section) {
+                var sign = minutes < 0 ? "-" : "";
+                var min = Math.floor(Math.abs(minutes));
+                var sec = Math.floor((Math.abs(minutes) * 60) % 60);
+
+                if (section == "FirstRow") {
+                    $('#total_waiting_time').text(sign + (min < 10 ? "0" : "") + min + "m " + (sec < 10 ? "0" : "") + sec + "s")
+
+                }
+                else if (section == "FirstRowAttending") {
+                    $('#total_attending_time').text(sign + (min < 10 ? "0" : "") + min + "m " + (sec < 10 ? "0" : "") + sec + "s")
+                }
+                else if (section == "TotalAvgTime") {
+                    return sign + (min < 10 ? "0" : "") + min + "m " + (sec < 10 ? "0" : "") + sec + "s";
+                }
+                else if (section == "IndividualService") {
+                    return "Avg.: " + sign + (min < 10 ? "0" : "") + min + "''"
+                }
+                return sign + (min < 10 ? "0" : "") + min + "m " + (sec < 10 ? "0" : "") + sec +"s";
+            }
+
+
+        </script>*@
+
+
+
+
+    }
+

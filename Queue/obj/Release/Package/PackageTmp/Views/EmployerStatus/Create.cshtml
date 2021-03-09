@@ -1,0 +1,83 @@
+﻿@model Queue.Models.EmployerStatus
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm("Create", "EmployerStatus", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployeer)
+
+
+    <div id="formempstatus" class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Creëer werkgeversstatus</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "EmployerStatus",new { idemployer = ViewBag.idemployer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.idemployerstatuslist, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.idemployerstatuslist, "", new { @class = "text-danger" })
+                                <!-- Date mm/dd/yyyy -->
+                                <div class="input-group">
+
+                                    @Html.DropDownList("idemployerstatuslist", null, htmlAttributes: new { @class = "form-control" })
+                                    @*@Html.EditorFor(model => model.statusdescription, new { htmlAttributes = new { @class = "form-control" } })*@
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.datestatus, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.datestatus, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        @Html.EditorFor(model => model.datestatus, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-info waves-effect waves-light btn-block">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#datestatus').val("");
+
+            $('#datestatus').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy'
+            });
+        });
+
+
+    </script>
+}

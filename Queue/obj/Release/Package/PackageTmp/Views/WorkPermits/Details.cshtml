@@ -1,0 +1,67 @@
+﻿@model Queue.Models.WorkPermit
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkPermit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.employeetype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.employeetype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.licensenro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.licensenro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateissue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateissue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateexpired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateexpired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.targetgroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.targetgroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idworkpermit }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

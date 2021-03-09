@@ -1,0 +1,75 @@
+﻿@model Queue.Models.HirerData
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployeer)
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Huurder gegevens</h2>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "HirerDatas",new { idemployer = Model.idemployeer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.registrationname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.registrationname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.registrationname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.tradename, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.tradename, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.tradename, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.chamberofcommerce, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.chamberofcommerce, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.chamberofcommerce, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-info waves-effect waves-light btn-block">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

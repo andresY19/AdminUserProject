@@ -1,0 +1,327 @@
+﻿@model Queue.Models.WorkListData
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployeer)
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Maak WorkList</h2>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "WorkListDatas",new { idemployer = Model.idemployeer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.worklistnumber, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.worklistnumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.worklistnumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.idworklistcategory, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.idworklistcategory, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DropDownList("idworklistcategory", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.p_permanetposition, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.p_permanetposition, new { htmlAttributes = new { @class = "form-control", min = 1, max = 30 } })
+                                    @Html.ValidationMessageFor(model => model.p_permanetposition, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.idstatusworklist, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.idstatusworklist, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DropDownList("idstatusworklist", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-3">
+                                @Html.LabelFor(model => model.dailyrestperiodstart, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    <select id="dailyrestperiodstart" name="dailyrestperiodstart" onclick="calcrestperiod()" class="form-control select2" style="width: 100%;">
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                            </div> <div class="col-3">
+                                @Html.LabelFor(model => model.dailyrestperiodsend, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    <select id="dailyrestperiodsend" name="dailyrestperiodsend" onclick="calcrestperiod()" class="form-control select2" style="width: 100%;">
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.f_dailyrestperiod, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.f_dailyrestperiod, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.f_dailyrestperiod, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-3">
+                                @Html.LabelFor(model => model.dailyworkinghourstart, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    <select id="dailyworkinghourstart" name="dailyworkinghourstart" onclick="calcdailyworkinghour()" class="form-control select2" style="width: 100%;">
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                @Html.LabelFor(model => model.dailyworkinghourend, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    <select id="dailyworkinghourend" name="dailyworkinghourend" onclick="calcdailyworkinghour()" class="form-control select2" style="width: 100%;">
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.p_dailyworkinghours, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.p_dailyworkinghours, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.p_dailyworkinghours, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.p_wokinghousperday, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    <select id="p_wokinghousperday" name="p_wokinghousperday" class="form-control select2" style="width: 100%;">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="10+">10+</option>
+                                    </select>
+                                    @*@Html.EditorFor(model => model.p_wokinghousperday, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                                    @Html.ValidationMessageFor(model => model.p_wokinghousperday, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.p_workinghouspersweek, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @*@Html.EditorFor(model => model.p_workinghouspersweek, new { htmlAttributes = new { @class = "form-control" } })*@
+                                    <select id="p_workinghouspersweek" name="p_workinghouspersweek" class="form-control select2" style="width: 100%;">
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="45+">45+</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(model => model.p_workinghouspersweek, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-info waves-effect waves-light btn-block">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script>
+    function calcrestperiod() {
+        $("#f_dailyrestperiod").val(0);
+        var hours = gethous("#dailyrestperiodstart", "#dailyrestperiodsend");
+        if (hours > 0) {
+            $("#f_dailyrestperiod").val(hours);
+        }
+    }
+    function calcdailyworkinghour() {
+        $("#p_dailyworkinghours").val(0);
+        var hours = gethous("#dailyworkinghourstart", "#dailyworkinghourend");
+        if (hours > 0) {
+            $("#p_dailyworkinghours").val(hours);
+        }
+    }
+
+    function gethous(a, b) {
+        var start = new Date();
+        start.setHours($(a).val());
+        start.setMinutes(00);
+        start.setSeconds(00);
+
+        var end = new Date();
+        end.setHours($(b).val());
+        end.setMinutes(00);
+        end.setSeconds(00);
+
+        return end.getHours() - start.getHours();
+    }
+</script>

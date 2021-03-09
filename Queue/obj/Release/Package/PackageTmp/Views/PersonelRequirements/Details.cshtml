@@ -1,0 +1,195 @@
+﻿@model Queue.Models.PersonelRequirement
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonelRequirement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.periodstart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.periodstart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.periodend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.periodend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobdescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobdescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomberformationplace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomberformationplace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workingdaysweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workingdaysweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workinghoursweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workinghoursweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.projectnumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.projectnumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.projectname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.projectname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.natureproject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.natureproject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expensive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expensive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientproject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientproject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalpersonel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalpersonel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yearexperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yearexperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.educationlevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.educationlevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.digitalskill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.digitalskill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.literacyskill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.literacyskill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comunicationskill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comunicationskill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agegroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agegroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idpersonelrequirement }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

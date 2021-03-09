@@ -1,0 +1,271 @@
+﻿@model Queue.Models.Employee
+
+@{
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Weet u zeker dat u dit wilt verwijderen?</h2>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "Employees",new { idemployer = Model.idemployeer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.identitynumber, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.identitynumber, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.identitynumber, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.GACcode, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.GACcode, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.GACcode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.lastname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.email, new { htmlAttributes = new { @class = "form-control", type = "email" } })
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.mobile, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.fax, htmlAttributes: new { @class = "control-label" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.fax, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.fax, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-danger waves-effect waves-light btn-block">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@*<h2>Delete</h2>
+
+
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.egov)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.egov)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.identitynumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.identitynumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.firstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.firstname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.addressnro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.addressnro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.aditionaladdress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.aditionaladdress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.sex)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sex)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nacionality)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nacionality)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.birthcountry)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.birthcountry)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.maritalstatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.maritalstatus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mobile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mobile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.fax)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fax)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+        </dl>*@
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+</div>

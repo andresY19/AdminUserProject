@@ -1,0 +1,155 @@
+﻿@model Queue.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idemployeetype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idemployeetype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.identitynumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.identitynumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressnro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressnro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aditionaladdress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aditionaladdress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birthcountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birthcountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maritalstatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maritalstatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idemployee }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

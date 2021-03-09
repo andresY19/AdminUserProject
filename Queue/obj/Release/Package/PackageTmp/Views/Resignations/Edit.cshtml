@@ -1,0 +1,104 @@
+﻿@model Queue.ViewModels.ResignationViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployee)
+    @Html.HiddenFor(model => model.idresignation)
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Uitdiensttreding</h2>
+                </div>
+                @*<div class="col-md-2">
+                    <a href="@Url.Action("Index", "Resignations",new { idemployee = Model.idemployee })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>*@
+                <div class="box-body">
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.resignationdate, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.resignationdate, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.resignationdate, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.reason, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.reason, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.reason, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.dismisalnumbre, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.dismisalnumbre, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.dismisalnumbre, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.idtermination, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.idtermination, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DropDownList("idtermination", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-warning waves-effect waves-light btn-block">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var ms = '@ViewBag.message';
+
+            $('#resignationdate').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy'
+            });
+
+            if (ms == "1") {
+                Swalsuccess()
+            }
+
+        });
+
+
+    </script>
+}

@@ -1,0 +1,43 @@
+﻿@model Queue.Models.EmployerStatus
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployerStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statusdescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statusdescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datestatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datestatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idemployerstatus }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,97 @@
+﻿@model Queue.ViewModels.AditionalInformationViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployeer)
+    @Html.HiddenFor(model => model.idaditionalinformation)
+    <div id="formcontact" class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Bewerk aanvullende werkinformatie</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "AditionalInformations",new { idemployer = ViewBag.idemployer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.idtradeunion, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.idtradeunion, "", new { @class = "text-danger" })
+                                <!-- Date mm/dd/yyyy -->
+                                <div class="input-group">
+                                    @Html.DropDownList("idtradeunion", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.numberunionmember, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.numberunionmember, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.numberunionmember, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.collectivelabor, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.collectivelabor, "", new { @class = "text-danger" })
+                                <!-- Date mm/dd/yyyy -->
+                                <div class="input-group">
+                                    @*@Html.EditorFor(model => model.collectivelabor, new { htmlAttributes = new { @class = "form-control" } })*@
+                                    <select id="collectivelabor" name="collectivelabor" class="form-control select2" style="width: 100%;">
+                                        <option value="Ja">Ja</option>
+                                        <option value="Nee">Nee</option>
+                                    </select>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.numberemployee, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.numberemployee, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.numberemployee, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-warning waves-effect waves-light btn-block">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+
+    $(document).ready(function () {
+
+        $("#collectivelabor").val('@ViewBag.collectivelabor');
+    });
+    </script>
+
+}

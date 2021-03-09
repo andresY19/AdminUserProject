@@ -1,0 +1,201 @@
+﻿@model Queue.Models.Employer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BussinesType.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BussinesType.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployerType.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployerType.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tradename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tradename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressnro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressnro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aditionaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aditionaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.companypersonalnumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companypersonalnumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.egov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.egov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.svb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.svb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kvk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kvk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isic4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isic4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isicdesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isicdesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.legalform)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.legalform)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobilenumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobilenumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userinsert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userinsert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateinsert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateinsert)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@model Queue.Models.AditionalInformation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AditionalInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.collectivelabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.collectivelabor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberemployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberemployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tradeunion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tradeunion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idaditionalinformation }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

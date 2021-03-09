@@ -1,0 +1,121 @@
+﻿@model Queue.Models.EmployerContact
+
+@{
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployeer)
+    @Html.HiddenFor(model => model.iemployercontact)
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Weet u zeker dat u dit wilt verwijderen?</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "EmployerContacts",new { idemployer = Model.idemployeer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        @*<a onclick="ContactView()" style="color:white" class="btn waves-effect waves-light btn-block btn-secondary">*@
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.identitienumber, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.identitienumber, "", new { @class = "text-danger" })
+
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.identitienumber, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.surname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.surname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.surname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.function, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.function, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.function, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.cellphone, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.cellphone, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.cellphone, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.fax, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.ValidationMessageFor(model => model.fax, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.fax, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @type = "email" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-danger waves-effect waves-light btn-block">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+}

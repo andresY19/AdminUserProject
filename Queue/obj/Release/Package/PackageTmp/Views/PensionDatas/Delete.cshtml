@@ -1,0 +1,87 @@
+﻿@model Queue.Models.PensionData
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.idemployee)
+    @Html.HiddenFor(model => model.status)
+    @Html.HiddenFor(model => model.idpension)
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Weet u zeker dat u dit wilt verwijderen?</h2>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "PensionDatas",new { idemployee = Model.idemployee })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.typeinstitution, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.typeinstitution, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.typeinstitution, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.refisteredinkkv, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.refisteredinkkv, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.refisteredinkkv, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.employerpension, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.employerpension, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.employerpension, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.employeepension, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.employeepension, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DisplayFor(model => model.employeepension, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-danger waves-effect waves-light btn-block">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#employeepension").val('@ViewBag.employeepension');
+        $("#employerpension").val('@ViewBag.employerpension');
+        $("#refisteredinkkv").val('@ViewBag.refisteredinkkv');
+    </script>
+}

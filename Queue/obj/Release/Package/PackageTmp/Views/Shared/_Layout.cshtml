@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <title>@ViewBag.Title - Labora</title>
+    <link href="~/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-extend.css" rel="stylesheet" />
+    <link href="~/Content/css/master_style.css" rel="stylesheet" />
+    <link href="~/Content/css/skins/_all-skins.css" rel="stylesheet" />
+    <link href="~/Content/css/Spiner.css" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @*@Styles.Render("~/css")*@
+</head>
+
+<body class="skin-info-light sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- mini logo -->
+                <div class="logo-mini">
+                    <span class="light-logo"><img style="width:80% !important" src="~/TemplateAssets/assets/images/logo.jpeg" alt="logo"></span>
+                    <span class="dark-logo"><img style="width:80% !important" src="~/TemplateAssets/assets/images/logo.jpeg" alt="logo"></span>
+                </div>
+                <!-- logo-->
+                <div class="logo-lg">
+                    <span class="light-logo"><img style="width:80% !important" src="~/TemplateAssets/assets/images/logo.jpeg" alt="logo"></span>
+                    <span class="dark-logo"><img style="width:80% !important" src="~/TemplateAssets/assets/images/logo.jpeg" alt="logo"></span>
+                </div>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <div>
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                </div>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="search-box">
+                            <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i class="mdi mdi-magnify"></i></a>
+                            <form class="app-search" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                        <!-- User Account-->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/TemplateAssets/assets/images/users/icon.png" class="user-image rounded-circle" alt="User Image">
+                            </a>
+                            <ul class="dropdown-menu animated flipInY">
+
+                                <li class="user-header bg-img" style="background-image: url('/TemplateAssets/assets/images//user-info.jpg')" data-overlay="3">
+                                    <div class="flexbox align-self-center">
+                                        <h4 class="user-name align-self-center">
+                                            <span>@Html.Raw(Session["Name"])</span>
+                                            <small>@Html.Raw(Session["Email"])</small>
+                                        </h4>
+                                    </div>
+                                </li>
+
+                                <li class="user-body">
+                                    <div class="dropdown-divider"></div>
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="ion-log-out"></i> Logout</a>
+                                        }
+                                    }
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar-->
+            <section class="sidebar">
+
+                <!-- sidebar menu-->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="user-profile treeview">
+                        <a href="">
+                            <span>
+                                <span class="d-block font-weight-600 font-size-16">@Html.Raw(Session["Name"])</span>
+                                <span class="email-id">@Html.Raw(Session["Email"])</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header nav-small-cap"><i class="mdi mdi-drag-horizontal mr-5"></i>MENU</li>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="">
+                            <a href="@Url.Action("UserList", "Manage")">
+                                <i class="mdi mdi-account-circle"></i>
+                                <span>Gebruikers</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="@Url.Action("Index", "Employers")">
+                                <i class="mdi mdi-contacts"></i>
+                                <span>Werkgevers</span>
+                            </a>
+                        </li>
+                    }
+                    @if (User.IsInRole("Employer"))
+                    {
+                        <li class="">
+                            <a href="@Url.Action("Create", "Employers")">
+                                <i class="mdi mdi-contacts"></i>
+                                <span>Werkgever</span>
+                            </a>
+                        </li>
+                    }
+                    @*<li class="">
+                            <a href="@Url.Action("Index", "Employees")">
+                                <i class="mdi mdi-contacts"></i>
+                                <span>Medewerkers</span>
+                            </a>
+                        </li>*@
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            &copy; @DateTime.Now.Year - Madworks Global NV  - madworksglobal.com
+        </footer>
+        <div class="control-sidebar-bg"></div>
+
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+    <script src="~/assets/vendor_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/assets/vendor_components/popper/dist/popper.min.js"></script>
+    <script src="~/assets/vendor_components/moment/min/moment.min.js"></script>
+    <script src="~/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="~/assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="~/assets/vendor_components/chart.js-master/Chart.min.js"></script>
+    <script src="~/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/assets/vendor_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/assets/vendor_components/raphael/raphael.min.js"></script>
+    <script src="~/assets/vendor_components/morris.js/morris.min.js"></script>
+    <script src="~/assets/vendor_components/datatable/datatables.js"></script>
+    <script src="~/assets/vendor_components/select2/dist/js/select2.full.js"></script>
+    <script src="~/js/template.js"></script>
+    <script src="~/js/iframeheight.js"></script>
+    <script src="~/js/Common.js?01"></script>
+
+    <script>
+
+                        //$.widget.bridge('uibutton', $.ui.button);
+                        //! function (window, document, $) {
+                        //    "use strict";
+                        //    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation()
+                        //}(window, document, jQuery);
+                        //var path = window.location.pathname;
+                        //path = path.substr(1);
+                        //path = path.split("/");
+
+                        //$('#Zone').text(path[0]);
+                        //if (path[1] != '' && path[1] != null) {
+                        //    $('#Zone2').text(path[1]);
+                        //    $('#Zone2').removeClass('d-none');
+                        //}
+
+                        //console.log(' pathname => ' + path)
+    </script>
+</body>
+
+@*@Scripts.Render("~/scripts")*@
+@RenderSection("scripts", required: false)
+
+</html>

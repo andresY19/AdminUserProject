@@ -1,0 +1,195 @@
+﻿@model Queue.Models.TemporaryWorker
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TemporaryWorker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employer.registrationname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employer.registrationname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.identitynumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.identitynumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressnro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressnro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aditionaladdress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aditionaladdress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GACcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GACcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birthcountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birthcountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maritalstatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maritalstatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iscocode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iscocode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iscocodedesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iscocodedesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iscocodesubmajorgroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iscocodesubmajorgroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.periodstart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.periodstart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.periodend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.periodend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workinfdaysperweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workinfdaysperweek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workinghoursperweek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workinghoursperweek)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idtempworker }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

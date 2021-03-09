@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/TemplateAssets/assets/images/favicon-32x32.png">
+    <title>@ViewBag.Title - Wu Queue System</title>
+    @Styles.Render("~/TemplateAssets/dark")
+</head>
+<body class="fix-header single-column card-no-border logo-center">
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        @*<span>
+                            <img src="~/TemplateAssets/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="~/TemplateAssets/assets/images/logo-light-text.png" height="25px" width="" class="light-logo" alt="homepage" />
+                        </span>*@
+                        <b>
+                            <img src="~/TemplateAssets/assets/images/logo-light-text.png" height="25px" class="light-logo" alt="homepage" />
+                            <img src="~/TemplateAssets/assets/images/_Western_Union_Logo-512_v2.png" alt="homepage" class="light-logo" style="padding-top:5px" />
+                        </b>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles  justify-content-center">
+                    <h3 class="text-center" id="choosee_service"></h3>
+                </div>
+                     @*<div class="row page-titles  justify-content-end">
+                    <div class="col-md-7 col-4">
+                        <div class="d-flex m-t-10 justify-content-end">
+                            <div class="d-flex m-r-20 m-l-10 ">
+                                <div class="chart-text m-r-10">
+                                    <h6 class="m-b-0"><small>CUSTOMER WAITING</small></h6>
+                                    <h4 class="m-t-0 text-wu-yellow text-right">65 <span><i class="fas fa-users"></i></span></h4>
+                                </div>
+                            </div>
+                            <div class="d-flex m-r-20 m-l-10 ">
+                                <div class="chart-text m-r-10">
+                                    <h6 class="m-b-0 text-right"><small>TIME WAITING AVG.</small></h6>
+                                    <h4 class="m-t-0 text-wu-yellow text-right">20 min <span><i class="fas fa-clock"></i></span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-body">
+                                <br />
+                                @RenderBody()
+                                @*<div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-block btn-lg btn-outline-warning bg-gray-wu"> Papiamento </button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <hr />
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-block btn-lg btn-outline-warning bg-gray-wu"> Español </button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <hr />
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-block btn-lg btn-outline-warning bg-gray-wu"> English </button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <hr />
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <button type="button" class="btn btn-block btn-lg btn-outline-warning bg-gray-wu"> Nederlands </button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <hr />*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer text-center">
+                    &copy; @DateTime.Now.Year - Madworks Global NV - madworksglobal.com
+                </footer>
+            </div>
+            </div>
+    </div>
+    @Scripts.Render("~/TemplateAssets/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

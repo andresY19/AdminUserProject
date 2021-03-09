@@ -1,0 +1,308 @@
+﻿@model Queue.ViewModels.TemporaryWorkerViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutElement.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.age)
+    @Html.HiddenFor(model => model.idemployeer)
+    @Html.HiddenFor(model => model.idtempworker)
+    @Html.HiddenFor(model => model.status)
+
+    <div class="row">
+        <div class="col-lg-12 col-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h2 class="box-title">Bewerk uitzendkrachten</h2>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "TemporaryWorkers",new { idemployer = Model.idemployeer })" class="btn waves-effect waves-light btn-block btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.identitynumber, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.identitynumber, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.identitynumber, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.lastname, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control" } })
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.addressnro, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.addressnro, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.addressnro, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.aditionaladdress, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.aditionaladdress, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.aditionaladdress, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.birthcountry, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.birthcountry, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DropDownList("birthcountry", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.nacionality, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.nacionality, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.DropDownList("nacionality", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.maritalstatus, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.maritalstatus, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <select id="maritalstatus" name="maritalstatus" onclick="calcrestperiod()" class="form-control select2" style="width: 100%;">
+                                        <option value="werknemer">werknemer</option>
+                                        <option value="getrouwd">getrouwd</option>
+                                        <option value="gescheiden">gescheiden</option>
+                                        <option value="weduwnaar">weduwnaar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.sex, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <select id="sex" name="sex" class="form-control select2" style="width: 100%;">
+                                        <option value="mens">mens</option>
+                                        <option value="vrouw">vrouw</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.jobtitle, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.jobtitle, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.jobtitle, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.iscocode, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.iscocode, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.iscocode, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.iscocodedesc, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.iscocodedesc, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.iscocodedesc, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.iscocodesubmajorgroup, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.iscocodesubmajorgroup, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.iscocodesubmajorgroup, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.periodstart, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.periodstart, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.periodstart, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.periodend, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.periodend, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.periodend, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.salary, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.salary, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <span class="input-group-addon">ƒ</span>
+                                    @Html.EditorFor(model => model.salary, new { htmlAttributes = new { @class = "form-control" } })
+                                    <span class="input-group-addon">.00</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.workinfdaysperweek, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.workinfdaysperweek, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.workinfdaysperweek, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.workinghoursperweek, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.workinghoursperweek, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.workinghoursperweek, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.GACcode, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.GACcode, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.GACcode, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-warning waves-effect waves-light btn-block">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#periodstart').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy'
+            });
+
+            $('#periodend').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy'
+            });
+            $("#maritalstatus").val('@ViewBag.maritalstatus');
+            $("#sex").val('@ViewBag.sex');
+
+            $('#salary').formatter({
+                'pattern': ' {{999}},{{99}}',
+                'persistent': true
+            });
+        });
+        $(function () {
+
+            $("#identitynumber")
+                .focusout(function () {
+
+                    var id = $("#identitynumber").val().replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "").replace("_", "");
+
+
+                    var age = Getage(id.slice(0, 8));
+                    $("#age").val(age);
+
+                });
+
+
+            function Getage(date) {
+
+                var dob = parsedate(date);
+                var today = new Date();
+                var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+                return age;
+            }
+
+            function parsedate(str) {
+                if (!/^(\d){8}$/.test(str)) return "invalid date";
+                var y = str.substr(0, 4),
+                    m = str.substr(4, 2),
+                    d = str.substr(6, 2);
+                return new Date(y, m - 1, d);
+            }
+
+        });
+
+    </script>
+}

@@ -1,0 +1,862 @@
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.dll.config
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.exe
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.exe.config
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.rsp
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.exe
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.exe.config
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.rsp
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.AppContext.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Collections.Immutable.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Console.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Compression.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Pipes.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Reflection.Metadata.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.AccessControl.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Claims.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.ValueTuple.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XPath.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.exe
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.exe.config
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.rsp
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\VBCSCompiler.exe
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\VBCSCompiler.exe.config
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Antlr3.Runtime.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.SqlServer.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Google.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Newtonsoft.Json.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Owin.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Net.Http.Formatting.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Helpers.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.WebHost.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Mvc.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Optimization.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Razor.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Deployment.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Razor.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\WebGrease.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Newtonsoft.Json.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Net.Http.Formatting.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.WebHost.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Helpers.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Mvc.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Optimization.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Razor.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Deployment.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Razor.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Antlr3.Runtime.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.SqlServer.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Google.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.CopyComplete
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.Migrations.initial.resources
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.Migrations.logmessage.resources
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.dll
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.pdb
+C:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.xml
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
+C:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.dll.config
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Queue.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.exe
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.exe.config
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csc.rsp
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.exe
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.exe.config
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\csi.rsp
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.AppContext.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Console.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Compression.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.FileSystem.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.IO.Pipes.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.AccessControl.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Claims.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.ValueTuple.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XPath.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.exe
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.exe.config
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\vbc.rsp
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\VBCSCompiler.exe
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Antlr3.Runtime.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Google.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Newtonsoft.Json.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Owin.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Net.Http.Formatting.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Helpers.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.WebHost.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Mvc.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Optimization.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Razor.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Deployment.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Razor.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\WebGrease.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Gma.QrCodeNet.Encoding.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Newtonsoft.Json.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Quartz.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Net.Http.Formatting.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Http.WebHost.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Helpers.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Mvc.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Optimization.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.Razor.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Deployment.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Web.WebPages.Razor.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Antlr3.Runtime.pdb
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Google.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.Migrations.initial.resources
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.Migrations.logmessage.resources
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.csproj.CopyComplete
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.dll
+D:\Proyectos\MadWorks\WuQueue\Queue\obj\Debug\Queue.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Queue.dll.config
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Queue.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Queue.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csc.exe
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csc.exe.config
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csc.rsp
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csi.exe
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csi.exe.config
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\csi.rsp
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.AppContext.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Console.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.IO.Compression.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.IO.FileSystem.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.IO.Pipes.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.AccessControl.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Claims.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.ValueTuple.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Xml.XPath.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\vbc.exe
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\vbc.exe.config
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\vbc.rsp
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\VBCSCompiler.exe
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Antlr3.Runtime.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\EntityFramework.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Gma.QrCodeNet.Encoding.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Google.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Newtonsoft.Json.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Owin.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Quartz.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Net.Http.Formatting.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Helpers.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Http.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Http.WebHost.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Mvc.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Optimization.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Razor.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.Deployment.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.Razor.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\WebGrease.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Gma.QrCodeNet.Encoding.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Gma.QrCodeNet.Encoding.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Newtonsoft.Json.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Quartz.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Quartz.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Net.Http.Formatting.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Http.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Http.WebHost.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Helpers.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Mvc.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Optimization.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.Razor.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.Deployment.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Web.WebPages.Razor.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Antlr3.Runtime.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\EntityFramework.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Google.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.Migrations.initial.resources
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.Migrations.logmessage.resources
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.csproj.CopyComplete
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.dll
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.pdb
+D:\Proyectos\MadWorks\MVC Base\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.initial.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.logmessage.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.employer_section.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.auditemployer.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.audittable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.ACTIONTOAUDITTABLE.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addauditactiontable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addauditactiontable2.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.editemployertable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.requereemployer.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.datedelete.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.dateadd.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.stringclientefieldonpersonel.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addemployeetable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addemployerrealtiontoeployees.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.employeedeleteemployetype.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.employeechangeemployetype.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addcountrytable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.employeernewfields.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addworklistcategory.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.reoveworklistcategory.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addworklistcategory2.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.editpersonelrequirement.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updatecontacttable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addAditionalInformation.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addemployerstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateemployer.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.UPDATEWORKLIST.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updatewroklist.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateworklistid.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateworklistidadd.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateworklistidaddstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.tradeunionadd.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.tradeunionadd2.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.employerstatuslistadd.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.requiredatestatusemployer.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.requiredatestatusemployer2.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateemployeetable1.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updatecountrytable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateemployeerequiered.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateemployeedatenull.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addpermittable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updateaditionalworktable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.updatecontact2.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addhirerdatatable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addresignationsection.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addTemporaryWorker.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addTemporaryWorkerstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addTemporaryWorkerdecimalchangeforsalary.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addpensiondatatable.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addpensiontablerequired.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addpensionmodifydecimals.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.addpensionmodifybools.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.workspermitstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.Migrations.Contactenstatus.resources
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
+D:\Proyectos\MadWorks\DAO\Queue\bin\Queue.dll.config
+D:\Proyectos\MadWorks\DAO\Queue\bin\Queue.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Queue.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csc.exe
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csc.exe.config
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csc.rsp
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csi.exe
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csi.exe.config
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\csi.rsp
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.AppContext.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Console.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.IO.Compression.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.IO.FileSystem.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.IO.Pipes.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.AccessControl.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Claims.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.ValueTuple.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Xml.XPath.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\vbc.exe
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\vbc.exe.config
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\vbc.rsp
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\VBCSCompiler.exe
+D:\Proyectos\MadWorks\DAO\Queue\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyectos\MadWorks\DAO\Queue\bin\Antlr3.Runtime.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\EntityFramework.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Gma.QrCodeNet.Encoding.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Google.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Newtonsoft.Json.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Owin.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Quartz.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Syncfusion.EJ2.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\Syncfusion.Licensing.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Net.Http.Formatting.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Helpers.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Http.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Http.WebHost.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Mvc.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Optimization.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Razor.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.Deployment.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.Razor.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\WebGrease.dll
+D:\Proyectos\MadWorks\DAO\Queue\bin\EntityFramework.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Gma.QrCodeNet.Encoding.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Gma.QrCodeNet.Encoding.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Newtonsoft.Json.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Quartz.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Quartz.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Net.Http.Formatting.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Http.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Http.WebHost.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Helpers.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Mvc.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Optimization.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.Razor.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.Deployment.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Web.WebPages.Razor.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Antlr3.Runtime.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Google.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Proyectos\MadWorks\DAO\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.csproj.CopyComplete
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.dll
+D:\Proyectos\MadWorks\DAO\Queue\obj\Debug\Queue.pdb
+D:\Proyectos\MadWorks\DAO\Queue\bin\Syncfusion.EJ2.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Queue.dll.config
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Queue.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Queue.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csc.exe
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csc.exe.config
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csc.rsp
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csi.exe
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csi.exe.config
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\csi.rsp
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.AppContext.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Console.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.IO.Compression.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.IO.FileSystem.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.IO.Pipes.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.AccessControl.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Claims.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.ValueTuple.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Xml.XPath.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\vbc.exe
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\vbc.exe.config
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\vbc.rsp
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\VBCSCompiler.exe
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Antlr3.Runtime.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\EntityFramework.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\EntityFramework.SqlServer.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Gma.QrCodeNet.Encoding.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Google.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Newtonsoft.Json.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Owin.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Quartz.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Syncfusion.EJ2.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Syncfusion.Licensing.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Formatting.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Helpers.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Http.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Http.WebHost.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Mvc.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Optimization.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Razor.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.Deployment.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.Razor.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\WebGrease.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\EntityFramework.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\EntityFramework.SqlServer.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Gma.QrCodeNet.Encoding.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Gma.QrCodeNet.Encoding.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Newtonsoft.Json.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Quartz.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Quartz.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Syncfusion.EJ2.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Formatting.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Http.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Http.WebHost.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Helpers.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Mvc.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Optimization.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.Razor.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.Deployment.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Web.WebPages.Razor.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Antlr3.Runtime.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Google.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.csproj.CopyComplete
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.pdb
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Extensions.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.Primitives.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\AutoMapper.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.Logging.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\AutoMapper.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.Logging.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Win32.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\netstandard.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.AppContext.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.Concurrent.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.NonGeneric.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.Specialized.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ComponentModel.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ComponentModel.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ComponentModel.TypeConverter.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Console.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Data.Common.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.Contracts.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.Debug.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.Process.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.StackTrace.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.Tools.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.TraceSource.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Diagnostics.Tracing.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Drawing.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Dynamic.Runtime.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Globalization.Calendars.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Globalization.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Globalization.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.Compression.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.Compression.ZipFile.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.FileSystem.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.FileSystem.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.FileSystem.Watcher.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.IsolatedStorage.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.MemoryMappedFiles.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.Pipes.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.Expressions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.Parallel.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.Queryable.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Http.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.NameResolution.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.NetworkInformation.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Ping.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Requests.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Security.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.Sockets.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.WebHeaderCollection.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.WebSockets.Client.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Net.WebSockets.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ObjectModel.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Reflection.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Reflection.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Reflection.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Resources.Reader.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Resources.ResourceManager.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Resources.Writer.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Handles.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.InteropServices.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Numerics.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Serialization.Formatters.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Serialization.Json.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Serialization.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.Serialization.Xml.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Claims.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Cryptography.Algorithms.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Cryptography.Csp.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Cryptography.Encoding.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Cryptography.Primitives.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.Principal.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Security.SecureString.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Text.Encoding.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Text.Encoding.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Text.RegularExpressions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Overlapped.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Tasks.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Tasks.Parallel.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Thread.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.ThreadPool.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Timer.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.ValueTuple.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.ReaderWriter.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.XDocument.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.XmlDocument.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.XmlSerializer.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.XPath.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Xml.XPath.XDocument.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Buffers.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.Immutable.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.Async.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Memory.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Numerics.Vectors.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Tasks.Extensions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Buffers.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Collections.Immutable.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Linq.Async.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Memory.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Numerics.Vectors.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\System.Threading.Tasks.Extensions.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\monitortracker.json
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\mongocrypt.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\snappy32.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\snappy64.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\libzstd.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\DnsClient.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Bson.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Driver.Core.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Driver.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Libmongocrypt.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\SharpCompress.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\DnsClient.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Bson.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Driver.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\MongoDB.Driver.Core.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.initial.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.addstatusstring.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.addstatusstring2.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.addstatusstring3.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.addidcompanytoconfigurartion.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.Migrations.finconfigurationtable.resources
+D:\Proyectos\Personales\Andres Villa Proyectos\ADA\MonitorWeb\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
