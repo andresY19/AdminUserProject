@@ -14,11 +14,10 @@
     <link href="~/Content/css/bootstrap-extend.css" rel="stylesheet" />
     <link href="~/Content/css/master_style.css" rel="stylesheet" />
     <link href="~/Content/css/skins/_all-skins.css" rel="stylesheet" />
-    <link href="~/Content/css/Spiner.css" rel="stylesheet" />    
+    <link href="~/Content/css/Spiner.css" rel="stylesheet" />
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/material.css" />
-    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    <script src="~/assets/vendor_components/chart-js/chart.js"></script>
 
     @*@Styles.Render("~/css")*@
 </head>
@@ -80,8 +79,7 @@
                                         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                         {
                                             @Html.AntiForgeryToken()
-                                            <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="ion-log-out"></i> Logout</a>
-                                        }
+                                            <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="ion-log-out"></i> Logout</a>}
                                     }
                                     <div class="dropdown-divider"></div>
                                 </li>
@@ -110,34 +108,76 @@
                     </li>
                     <li class="header nav-small-cap"><i class="mdi mdi-drag-horizontal mr-5"></i>MENU</li>
 
+                    <li class="">
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="mdi mdi-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="">
                             <a href="@Url.Action("UserList", "Manage")">
                                 <i class="mdi mdi-account-circle"></i>
-                                <span>Users</span>
+                                <span>Usuarios</span>
                             </a>
                         </li>
 
+                        <li class="">
+                            <a href="@Url.Action("Index", "Agent_Employee")">
+                                <i class="fa fa-users"></i>
+                                <span>Empleados</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="@Url.Action("Index", "Agent_Job")">
+                                <i class="fa fa-calendar"></i>
+                                <span>Cargos & Horarios</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="@Url.Action("Index", "Agent_ProgramClasification")">
+                                <i class="fa fa-microchip"></i>
+                                <span>Clasificación de programas</span>
+                            </a>
+                        </li>
+                    }
+                    @if (User.IsInRole("SAdmin"))
+                    {
                         <li class="">
                             <a href="@Url.Action("Index", "Agent_Empresa")">
                                 <i class="fa fa-building"></i>
                                 <span>Companies</span>
                             </a>
                         </li>
-
-
                     }
                     @if (User.IsInRole("User"))
                     {
 
                     }
-                    @*<li class="">
-            <a href="@Url.Action("Index", "Employees")">
-                <i class="mdi mdi-contacts"></i>
-                <span>Medewerkers</span>
-            </a>
-        </li>*@
+
+                    <li class="">
+                        <a href="@Url.Action("Index", "Agent_GroupHorary")">
+                            <i class="fa fa-clock-o"></i>
+                            <span>Group Horary</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="mdi mdi-notification-clear-all"></i>
+                            <span>Reportes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Index", "UserReport")">Por Empleado</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </aside>
@@ -156,11 +196,39 @@
         </footer>
         <div class="control-sidebar-bg"></div>
 
+        @if (User.IsInRole("Admin"))
+        {<!-- File Modal -->
+            using (Html.BeginForm("uploaduser", "Agent_Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal fade" id="FileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Add Multiple Employees</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <input type="file" name="file" id="file" />
+                                    <p class="help-block">@ViewBag.Message</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
     </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/assets/vendor_components/jquery-ui/jquery-ui.js"></script>
     <script src="~/assets/vendor_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="~/assets/vendor_components/popper/dist/popper.min.js"></script>
     <script src="~/assets/vendor_components/moment/min/moment.min.js"></script>
     <script src="~/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
     <script src="~/assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -174,27 +242,60 @@
     <script src="~/js/template.js"></script>
     <script src="~/js/iframeheight.js"></script>
     <script src="~/js/Common.js?01"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script>
+ 
 
-                                //$.widget.bridge('uibutton', $.ui.button);
-                                //! function (window, document, $) {
-                                //    "use strict";
-                                //    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation()
-                                //}(window, document, jQuery);
-                                //var path = window.location.pathname;
-                                //path = path.substr(1);
-                                //path = path.split("/");
-
-                                //$('#Zone').text(path[0]);
-                                //if (path[1] != '' && path[1] != null) {
-                                //    $('#Zone2').text(path[1]);
-                                //    $('#Zone2').removeClass('d-none');
-                                //}
-
-                                //console.log(' pathname => ' + path)
+    @if (TempData.ContainsKey(Queue.Utils.Alerts.SUCCESS))
+    {
+        foreach (var value in TempData.Values)
+        {
+            <script>
+            swal("Exitoso!", "@value.ToString()", "success");            
     </script>
-    @Html.EJS().ScriptManager()
+}
+TempData.Remove(Queue.Utils.Alerts.SUCCESS);
+}
+
+@if (TempData.ContainsKey(Queue.Utils.Alerts.ERROR))
+{
+    foreach (var value in TempData.Values)
+    {
+<script>
+        swal("Atención!", "@value.ToString()", "error");
+</script>
+    }
+    TempData.Remove(Queue.Utils.Alerts.ERROR);
+}
+
+@if (TempData.ContainsKey(Queue.Utils.Alerts.INFORMATION))
+{
+    foreach (var value in TempData.Values)
+    {
+<script>
+        swal("Atención!", "@value.ToString()", "info");
+</script>
+    }
+    TempData.Remove(Queue.Utils.Alerts.INFORMATION);
+}
+
+@if (TempData.ContainsKey(Queue.Utils.Alerts.WARNING))
+{
+    foreach (var value in TempData.Values)
+    {
+<script>
+        swal("Atención!", "@value.ToString()", "warning");
+</script>
+    }
+    TempData.Remove(Queue.Utils.Alerts.WARNING);
+}
+
+   
+@Html.EJS().ScriptManager()
+
+
+
+
 </body>
 
 @*@Scripts.Render("~/scripts")*@

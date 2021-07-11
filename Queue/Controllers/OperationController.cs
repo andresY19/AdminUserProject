@@ -9,6 +9,7 @@ using MongoDB.Driver;
 using Newtonsoft.Json;
 using Queue.Models;
 using Queue.ViewModels;
+using MongoDB.Driver.Linq;
 
 namespace Queue.Controllers
 {
@@ -165,6 +166,69 @@ namespace Queue.Controllers
             {
                 throw ex;
             }
+        }
+
+        public List<AutomaticTakeTimeModel> GetSoftWareClasification(string IdCompany)
+        {
+            try
+            {
+                //MongoHelper.SoftWareList = MongoHelper.database.GetCollection<InstalledProgramsViewModel>("Software");
+                //var builder = Builders<InstalledProgramsViewModel>.Filter;
+
+                //var filter = builder.Eq("IdCompany", IdCompany) & builder.Eq("Status", true);
+
+                //var results = MongoHelper.SoftWareList.Find(filter).ToList();
+
+
+                var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
+                             where e.IdEmpresa == IdCompany
+                             select new AutomaticTakeTimeModel
+                             {
+                                 Application = e.Application
+
+                             }).Distinct().ToList();
+
+                return query;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+
+        #region Stadisticas
+
+        public BasicStatsModel MoreUsedApp(string idcompany, DateTime fromdate, DateTime todate)
+        {
+            BasicStatsModel bm = new BasicStatsModel();
+            var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
+                         where e.IdEmpresa == idcompany
+                         && (e.Date <= todate && e.Date >= fromdate)
+                         select new AutomaticTakeTimeModel
+                         {
+                             Application = e.Application,
+                             Time = e.Activity,
+                             Date = e.Date
+                         }).Distinct().ToList();
+
+            foreach (var grouping in query.GroupBy(g => g.Application).ToList())
+            {
+                var item = grouping;
+
+                double? time = query.Where(t => t.Application == item.Key).Select(f => f.Time).Sum();
+                bm.labels.Add(item.Key);
+                double? totalminutes = 0;
+
+                if (time != null && time > 0)
+                    totalminutes = (time / 60);
+
+                bm.data.Add(Math.Round(totalminutes.Value, 2));
+            }
+
+            return bm;
         }
 
         #endregion

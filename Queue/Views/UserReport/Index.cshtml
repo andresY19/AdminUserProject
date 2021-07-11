@@ -1,0 +1,122 @@
+﻿
+@{ ViewBag.Title = "Home Page"; }
+
+<!-- chartist CSS -->
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/css-chart/css-chart.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+<link href="~/TemplateAssets/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+
+
+<!--This page css - Morris CSS -->
+<link href="~/TemplateAssets/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Reporte por Empleado</h4>
+                <div class="card-body">
+                    <div class="row button-group">
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_today" onclick="setStatsView('today')" class="btn btn-block btn-outline-info">Hoy</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_week" onclick="setStatsView('week')" class="btn btn-block btn-outline-success">Esta Semana</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_month" onclick="setStatsView('month')" class="btn btn-block btn-outline-primary">Este Mes</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_3months" onclick="setStatsView('3months')" class="btn btn-block btn-outline-danger">Hace 3 Meses</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_6months" onclick="setStatsView('6months')" class="btn btn-block btn-outline-secondary">Hace 6 meses</button>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <button type="button" id="btn_year" onclick="setStatsView('Year')" class="btn btn-block btn-outline-warning">Este Año</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="row justify-content-center" id="first_row_today">
+                <div id="statslist">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>jQuery(document).ready(function () {
+        MoreUsedApp();
+    });
+
+    function MoreUsedApp() {
+        $.ajax({
+            type: "GET",
+            url: "/Home/MoreUsedApp",
+            success: function (d) {
+                var contador = 1;
+
+                $("div#statslist").append("<div id='preload" + contador + "'><h2></h2></div> <div class='table-responsive'> <canvas id='Chart" + contador + "' width='100' height='400'></canvas> </div>");
+                var divname = "div#preload" + contador + " h2";
+                var chartname = "Chart" + contador
+                var coloR = [];
+                var dynamicColors = function () {
+                    var r = Math.floor(Math.random() * 255);
+                    var g = Math.floor(Math.random() * 255);
+                    var b = Math.floor(Math.random() * 255);
+                    return "rgb(" + r + "," + g + "," + b + ")";
+                };
+
+                var i;
+                for (i = 0; i < d.data.length; i++) {
+                    coloR.push(dynamicColors());
+                }
+                $(divname).html("Aplicaciones Mas Usadas (en minutos)")
+                var ctx = document.getElementById(chartname).getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: d.labels,
+                        datasets: [{
+                            label: d.group,
+                            data: d.data,
+                            backgroundColor: coloR,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        legend: { display: false },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+    }</script>
+
+@section Scripts {
+
+
+
+}
+
