@@ -26,15 +26,6 @@
                                 </div>
                                 <!-- /.input group -->
                             </div>
-                            <div class="col-6">
-                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
-                                <!-- Date mm/dd/yyyy -->
-                                <div class="input-group">
-                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control required" } })
-                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                                </div>
-                                <!-- /.input group -->
-                            </div>
                         </div>
                     </div>
 

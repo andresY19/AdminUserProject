@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Queue.Utils;
+using Queue.Controllers.Token;
 
 namespace Queue.Controllers
 {
@@ -80,55 +81,66 @@ namespace Queue.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            ApplicationUser signedUser = UserManager.FindByEmail(model.Email);
+
+            if (signedUser != null)
             {
-                case SignInStatus.Success:
-                    var oUser = await db.Users.Where(u => u.Email == model.Email).SingleOrDefaultAsync();
-                    //var oUser = await UserManager.FindByNameAsync(model.Email);
-                    oUser.IsLoged = true;
-                    //db.Entry(oUser).State = EntityState.Modified;
-                    await db.SaveChangesAsync();
-                    var role = UserManager.GetRoles(oUser.Id);
-                    Session["Email"] = oUser.Email;
-                    Session["Name"] = oUser.FirstName + " " + oUser.LastName;
-                    Session["UserId"] = oUser.Id;
-                    Session["Role"] = role;
-                    Session["InsuredKey"] = Guid.NewGuid().ToString();
+                var result = await SignInManager.PasswordSignInAsync(signedUser.UserName, model.Password, model.RememberMe, shouldLockout: false);
+                switch (result)
+                {
+                    case SignInStatus.Success:
+                        var oUser = await db.Users.Where(u => u.Email == model.Email).SingleOrDefaultAsync();
+                        var id = Guid.Parse(oUser.Id);
+                        var company = db.Agent_UserCompany.Where(uc => uc.idUser == id).FirstOrDefault().IdCompany.ToString();
+                        oUser.IsLoged = true;
+                        //db.Entry(oUser).State = EntityState.Modified;
+                        await db.SaveChangesAsync();
 
-                    //audit section
-                  // ac.InserAuditAction("Login", ActionType.Action.Login.ToString());
+                        var role = UserManager.GetRoles(oUser.Id);
+                        Session["Email"] = oUser.Email;
+                        Session["Name"] = oUser.FirstName + " " + oUser.LastName;
+                        Session["UserId"] = oUser.Id;
+                        Session["Role"] = role;
+                        Session["InsuredKey"] = Guid.NewGuid().ToString();
+                        Session["Company"] = company;
 
-                    return RedirectToAction("Index", "Home");
+                        //audit section
+                        // ac.InserAuditAction("Login", ActionType.Action.Login.ToString());
 
-                //if (role[0] == "Admin")
-                //{
-                //    return RedirectToLocal(returnUrl);
-                //}
-                //else if (role[0] == "Tablet")
-                //{
-                //    return RedirectToAction("Index", "Tablet");
-                //}
-                //else if (role[0] == "User")
-                //{
+                        return RedirectToAction("Index", "Home");
 
-                //    return RedirectToAction("ChooseDesktop", "UserDesktop");
-                //}
-                //else
-                //{
-                //    //is Viewer
-                //    return RedirectToAction("Main", "Viewer");
-                //}
+                    //if (role[0] == "Admin")
+                    //{
+                    //    return RedirectToLocal(returnUrl);
+                    //}
+                    //else if (role[0] == "Tablet")
+                    //{
+                    //    return RedirectToAction("Index", "Tablet");
+                    //}
+                    //else if (role[0] == "User")
+                    //{
 
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    //    return RedirectToAction("ChooseDesktop", "UserDesktop");
+                    //}
+                    //else
+                    //{
+                    //    //is Viewer
+                    //    return RedirectToAction("Main", "Viewer");
+                    //}
+
+                    case SignInStatus.LockedOut:
+                        return View("Lockout");
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    case SignInStatus.Failure:
+                    default:
+                        ModelState.AddModelError("", "Invalid login attempt.");
+                        return View(model);
+                }
             }
+            ModelState.AddModelError("", "Invalid login attempt.");
+            return View(model);
         }
 
         //
@@ -182,20 +194,21 @@ namespace Queue.Controllers
         {
 
             List<SelectListItem> RoleID = new List<SelectListItem>();
-            var RolesNames = db.Roles.OrderBy(c => c.Name).ToList();
+            var RolesNames = db.Roles.OrderBy(c => c.Name).Where(c => c.Name != "SAdmin").ToList();
             foreach (var r in RolesNames)
             {
                 RoleID.Add(new SelectListItem() { Text = r.Name, Value = r.Id });
             }
 
             this.ViewBag.RoleID = new SelectList(RoleID, "Value", "Text");
+            this.ViewBag.Enterprises = db.Agent_Empresa.Select(e => new { e.IdCompany, e.Nombre });
             return View();
         }
 
         //
         // POST: /Account/Register
         [HttpPost]
-        [Authorize(Roles = "Admin,Manager")]
+        [Authorize(Roles = "SAdmin,Admin,Manager")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -242,6 +255,34 @@ namespace Queue.Controllers
             this.ViewBag.RoleID = new SelectList(RoleID, "Value", "Text");
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        public async Task<String> AddAdmnistrator(RegisterViewModel model)
+        {
+            model.Password = System.Web.Security.Membership.GeneratePassword(8, 1);
+            var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+            var result = await UserManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+
+                var Role = db.Roles.Where(r => r.Id == model.RoleID).SingleOrDefault();
+                await UserManager.AddToRoleAsync(user.Id, Role.Name);
+
+                var oUser = db.Users.Find(user.Id);
+                oUser.EmailConfirmed = true;
+                oUser.LockoutEnabled = false;
+
+                db.Entry(oUser).State = EntityState.Modified;
+                
+                EmailController ec = new EmailController();
+                ec.SendInvitation(model.Email, model.Email, model.Password);
+
+                await db.SaveChangesAsync();
+
+                return oUser.Id;
+            }
+
+            return string.Empty;
         }
 
         //
