@@ -22,7 +22,7 @@
                     <br />
 
                     <div class="col-md-2">
-                        <a href="@Url.Action("Register", "Account")" class="btn btn-info btn-block m-t-10 float-right">
+                        <a href="@Url.Action("Register", "Account")" class="btn btn-info btn-sm m-t-10 float-right">
                             <i class="fa fa-plus"></i> New User
                         </a>
                     </div>
@@ -54,7 +54,7 @@
                                     <td>
                                         <a id="idiom_@Html.DisplayFor(modelItem => item.Id)" class="qx_black_link" href="@Url.Action("EditUser", "Manage", new { id = item.Id })"> @Html.DisplayFor(modelItem => item.LastName)</a>
                                     </td>
-                                    <td>
+                                    <td style="text-align:center">
                                         @if (item.IsLoged)
                                         {
                                             <a id="idiom_@Html.DisplayFor(modelItem => item.Id)" class="text-success" href="@Url.Action("EditUser", "Manage", new { id = item.Id })"> @_islogged </a>
@@ -66,10 +66,10 @@
 
                                         }
                                     </td>
-                                    <td>
+                                    <td style="text-align:center">
                                         <a id="idiom_@Html.DisplayFor(modelItem => item.Id)" class="qx_black_link" href="@Url.Action("EditUser", "Manage", new { id = item.Id })"> @Html.DisplayFor(modelItem => item.Role) </a>
                                     </td>
-                                    <td>
+                                    <td style="text-align:center">
                                         <a class="btn btn-outline-secondary" href="@Url.Action("EditUser", "Manage", new { id = item.Id })"><i class="fa fa-edit"></i></a>
                                         @*<a class="btn btn-outline-secondary" href="@Url.Action("Delete", "Idioms", new { id = item.Id })"><i class="fas fa-trash"></i></a>*@
 

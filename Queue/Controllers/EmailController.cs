@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Queue.Controllers
 {
-    [Authorize(Roles = "Admin,Manager,Employer,Employee")]
+    [Authorize(Roles = "SAdmin,Admin,Manager,Employer,Employee")]
     public class EmailController : Controller
     {
         // GET: Email

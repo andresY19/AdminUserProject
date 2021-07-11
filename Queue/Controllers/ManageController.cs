@@ -334,24 +334,37 @@ namespace Queue.Controllers
         [SessionAuthorize]
         public ActionResult UserList()
         {
-            var lUsers = db.Users.Include(u => u.Roles).ToList();
+            var company = Guid.Parse(Request.RequestContext.HttpContext.Session["Company"].ToString());
+
+            var uc = db.Agent_UserCompany.Where(c => c.IdCompany == company).ToList();
+
+            var lUsers = db.Users
+                .Where(u => u.Id != "19cc7006-3114-4a5e-bfdd-7964d9aaa067") //usuario compañia
+                .Include(u => u.Roles).ToList();
+
             List<UserListViewModel> lUsersVM = new List<UserListViewModel>();
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new QueueContext()));
 
-
-            if (lUsers.Count() > 0)
-            {
-                foreach (var item in lUsers)
+            if (uc.Count > 0) {
+                if (lUsers.Count() > 0)
                 {
-
-                    var role = manager.GetRoles(item.Id);
-                    if (role.Count > 0)
+                    foreach (var item in lUsers)
                     {
-                        var UsersVM = new UserListViewModel(item, role[0]);
-                        lUsersVM.Add(UsersVM);
+                        foreach (var i in uc) 
+                        {
+                            if (item.Id.Equals(i.idUser.ToString())) 
+                            {
+                                var role = manager.GetRoles(item.Id);
+                                if (role.Count > 0)
+                                {
+                                    var UsersVM = new UserListViewModel(item, role[0]);
+                                    lUsersVM.Add(UsersVM);
+                                }
+                            }
+                        }
                     }
-                }
 
+                }
             }
             return View(lUsersVM);
         }
