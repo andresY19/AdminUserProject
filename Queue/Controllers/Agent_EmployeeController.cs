@@ -39,7 +39,7 @@ namespace Queue.Controllers
         public ActionResult Create()
         {
             ViewBag.Jobs = db.Agent_Job.ToList();
-            ViewBag.Horarys = db.Agent_GroupHoraryDetail.Include(x => x.Agent_GroupHorary).Select(g=> g.Agent_GroupHorary).Distinct().OrderBy(d => d.NameGroup).ToList();
+            ViewBag.Horarys = db.Agent_GroupHoraryDetail.Include(x => x.Agent_GroupHorary).Select(g => g.Agent_GroupHorary).Distinct().OrderBy(d => d.NameGroup).ToList();
             return View();
         }
 
@@ -51,21 +51,26 @@ namespace Queue.Controllers
             Guid idcompany = Guid.Parse(Request.RequestContext.HttpContext.Session["Company"].ToString());
             if (ModelState.IsValid)
             {
-                if (db.Agent_Employee.Where(t => t.IdCompany == idcompany && t.Usuario == agent_Employee.Usuario).Count() <= 0)
+                if (db.Agent_Employee.Where(t => t.IdCompany == idcompany && t.Identificacion == agent_Employee.Identificacion).Count() <= 0)
                 {
-                    if (db.Agent_Employee.Where(t => t.IdCompany == idcompany && t.Email == agent_Employee.Email).Count() <= 0)
+                    if (db.Agent_Employee.Where(t => t.IdCompany == idcompany && t.Usuario == agent_Employee.Usuario).Count() <= 0)
                     {
-                        agent_Employee.IdCompany = idcompany;
-                        agent_Employee.idEmployee = Guid.NewGuid();
-                        db.Agent_Employee.Add(agent_Employee);
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
+                        if (db.Agent_Employee.Where(t => t.IdCompany == idcompany && t.Email == agent_Employee.Email).Count() <= 0)
+                        {
+                            agent_Employee.IdCompany = idcompany;
+                            agent_Employee.idEmployee = Guid.NewGuid();
+                            db.Agent_Employee.Add(agent_Employee);
+                            db.SaveChanges();
+                            return RedirectToAction("Index");
+                        }
+                        else
+                            Warning("Email ya existe", string.Empty);
                     }
                     else
-                        Warning("Email ya existe", string.Empty);
+                        Warning("Nombre Usuario ya existe", string.Empty);
                 }
                 else
-                    Warning("Nombre Usuario ya existe", string.Empty);
+                    Warning("La identificación del Usuario ya existe", string.Empty);
             }
             ViewBag.Horarys = db.Agent_GroupHoraryDetail.Include(x => x.Agent_GroupHorary).Select(g => g.Agent_GroupHorary).Distinct().OrderBy(d => d.NameGroup).ToList();
             ViewBag.Jobs = db.Agent_Job.ToList();
