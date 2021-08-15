@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Queue.Models.Agent_Configuration>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InactivityTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InactivityPeriod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaptureFrecuency)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InactivityTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InactivityPeriod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaptureFrecuency)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Configuration }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Configuration }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Configuration })
+        </td>
+    </tr>
+}
+
+</table>

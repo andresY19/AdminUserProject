@@ -1,0 +1,148 @@
+﻿@model Queue.Models.Agent_GroupHoraryDetail
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Create</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Agent_GroupHoraryDetail</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Day, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Day, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Day, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HourFrom, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HourFrom, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HourFrom, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HourUntil, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HourUntil, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HourUntil, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Type, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Id_GroupHorary, "Id_GroupHorary", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Id_GroupHorary", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Id_GroupHorary, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@using (Html.BeginForm("Create", "Agent_GroupHoraryDetail", FormMethod.Post, new { id = "frm_register" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(d => d.Id_GroupHorary);
+    <div id="divblock" class="row">
+        <div class="col-lg-12 col-12">
+
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Create Horary</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "Agent_GroupHoraryDetail", new { id = ViewBag.IdGroupHorary })" class="btn btn-info btn-block m-t-10 float-right">
+                        <i class="fa fa-plus"></i> Back
+                    </a>
+                </div>
+
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Day, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EnumDropDownListFor(model => model.Day, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Day, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HourFrom, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.HourFrom, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
+                                    @Html.ValidationMessageFor(model => model.HourFrom, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.HourUntil, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.HourUntil, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
+                                    @Html.ValidationMessageFor(model => model.HourUntil, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EnumDropDownListFor(model => model.Type, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Id_GroupHorary, "Id_GroupHorary", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("Id_GroupHorary", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                                        @Html.ValidationMessageFor(model => model.Id_GroupHorary, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="d-flex flex-row-reverse">
+                        <div class="p-2">
+                            <button id="add_company" name="add_dictionary" type="submit" value="Create" class="btn btn-info waves-effect waves-light btn-block">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>}

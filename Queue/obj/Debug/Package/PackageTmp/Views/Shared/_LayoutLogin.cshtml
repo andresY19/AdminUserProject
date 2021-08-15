@@ -1,0 +1,65 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <title>@ViewBag.Title - Monitor Tracker</title>
+    <link href="~/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-extend.css" rel="stylesheet" />
+    <link href="~/Content/css/master_style.css" rel="stylesheet" />
+    <link href="~/Content/css/skins/_all-skins.css" rel="stylesheet" />
+</head>
+
+<body class="hold-transition bg-img" style="background-image: url(../../TemplateAssets/assets/images/Back3.jpg)" data-overlay="4">
+
+    <div class="container h-p100">
+        <div class="row align-items-center justify-content-md-center h-p100">
+            <div class="col-12">
+                <div class="row no-gutters justify-content-md-center">
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="content-top-agile h-p100">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <div class="logo-mini">
+                                <span class="light-logo"><img style="width:100%" src="~/TemplateAssets/assets/images/LogoTraker.png" alt="logo"></span>
+                            </div>
+
+                            @*<p class="text-white">Follow Us</p>
+
+                                <div class="text-center text-white">
+                                    <p class="mt-20">- Social Media -</p>
+                                    <p class="gap-items-2 mb-20">
+                                        <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
+                                    </p>
+                                </div>*@
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-12">
+                        <div class="p-40 bg-white content-bottom h-p100">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="~/assets/vendor_components/popper/dist/popper.min.js"></script>
+    <script src="~/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    @*@Scripts.Render("~/assets/loginscripts")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

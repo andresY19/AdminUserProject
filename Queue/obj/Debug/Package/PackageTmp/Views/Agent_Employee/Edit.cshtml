@@ -1,0 +1,163 @@
+﻿@model Queue.Models.Agent_Employee
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Agent_Employee", FormMethod.Post, new { id = "frm_register" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.idEmployee)
+
+    <div id="divblock" class="row">
+        <div class="col-lg-12 col-12">
+
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Edit Employee</h4>
+                </div>
+                <div class="col-md-2">
+                    <a href="@Url.Action("Index", "Agent_Employee")" class="btn btn-info btn-block m-t-10 float-right">
+                        <i></i> Back
+                    </a>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-id-card-o"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control required" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Identificacion, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Identificacion, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-id-card"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Identificacion, new { htmlAttributes = new { @class = "form-control required" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-map-marker"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control required" } })
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control required" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-at"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control required", @type = "email" } })
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Cargo, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Cargo, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                    </div>
+                                    @Html.DropDownList("Cargo", new SelectList(ViewBag.Jobs, "idJob", "Cargo"), new { @class = "form-control required" })
+                                </div>
+                                <br />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control required" } })
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <select class="form-control select2" id="string_status" name="string_status" style="width: 100%;">
+                                        <option id="1">Active</option>
+                                        <option id="0">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Id_GroupHorary, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Id_GroupHorary, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                    </div>
+                                    @Html.DropDownList("Id_GroupHorary", new SelectList(ViewBag.Horarys, "Id_GroupHorary", "NameGroup"), new { @class = "form-control required" })
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="d-flex flex-row-reverse">
+                        <div class="p-2">
+                            <button id="edit" name="add_dictionary" type="submit" value="Create" class="btn btn-warning waves-effect waves-light btn-block">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var status = '@ViewBag.status';
+            if (status == "False") {
+                $("#string_status").val("Inactive");
+            }
+        });
+    </script>
+}

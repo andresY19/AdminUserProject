@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="~/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-extend.css" rel="stylesheet" />
+    <link href="~/Content/css/master_style.css" rel="stylesheet" />
+    <link href="~/Content/css/skins/_all-skins.css" rel="stylesheet" />
+    <link href="~/Content/css/Spiner.css" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body class="hold-transition skin-info-light sidebar-mini">
+
+    <section class="content">
+        @RenderBody()
+    </section>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+    <script src="~/assets/vendor_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/assets/vendor_components/popper/dist/popper.min.js"></script>
+    <script src="~/assets/vendor_components/moment/min/moment.min.js"></script>
+    <script src="~/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="~/assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="~/assets/vendor_components/chart.js-master/Chart.min.js"></script>
+    <script src="~/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/assets/vendor_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/assets/vendor_components/raphael/raphael.min.js"></script>
+    <script src="~/assets/vendor_components/morris.js/morris.min.js"></script>
+    <script src="~/assets/vendor_components/datatable/datatables.js"></script>
+    <script src="~/assets/vendor_components/select2/dist/js/select2.full.js"></script>
+    <script src="~/assets/vendor_components/formatter/formatter.min.js"></script>
+    <script src="~/assets/vendor_components/formatter/jquery.formatter.min.js"></script>
+    <script src="~/assets/vendor_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/js/iframeheight.js"></script>
+    <script src="~/js/Common.js?01"></script>
+    <script>
+
+
+        function Personel() {
+            $('#iframePersonel').outerHeight(1000);
+        }
+    </script>
+</body>
+@RenderSection("scripts", required: false)
+</html>

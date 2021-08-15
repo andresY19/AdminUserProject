@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Queue.Models.Agent_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="box-header with-border">
+                <h4 class="box-title">Companies</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-10">
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="col-md-2">
+                        <a href="@Url.Action("Create", "Agent_Empresa")" class="btn btn-info btn-sm m-t-10 float-right">
+                            <i class="fa fa-plus"></i> New Company
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Direccion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telefono)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Rut)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.status)
+                                </th>
+                                <th style="text-align:center">Edit</th>
+                                <th style="text-align:center">Configurations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Direccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telefono)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Rut)
+                                </td>                                
+                                <td>
+                                    @if (item.status == true)
+                                    {
+                                        <label>Active</label>
+                                    }
+                                    else
+                                    {
+                                        <label>Inactive</label>
+                                    }
+
+                                </td>
+                                <td style="text-align:center">
+                                    <a class="btn btn-outline-secondary" href="@Url.Action("Edit", "Agent_Empresa", new { id = item.IdCompany })"><i class="fa fa-edit"></i></a>
+                                </td>
+                                <td style="text-align:center">
+                                    <a class="btn btn-outline-secondary" href="@Url.Action("Create", "Agent_Configuration", new { id = item.IdCompany })"><i class="fa fa-laptop"></i></a>
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script>
+        $('#myTable').DataTable();
+    </script>
+}

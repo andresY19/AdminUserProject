@@ -1,0 +1,525 @@
+﻿@model Queue.ViewModels.EmployerViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var idemployer = ViewBag.idemployer;
+    var mesasge = ViewBag.message;
+    var valdata = ViewBag.valdata;
+    var secpaint = ViewBag.secpaint;
+    var showx = ViewBag.showx;
+}
+@*<div class="loader"></div>*@
+<input id="idmessage" type="hidden" value="@ViewBag.message" />
+<link href="~/Content/css/Collapse.css?01" rel="stylesheet" />
+<div class="accordion" id="accordion2">
+    
+    <div id="divemplooyee" onclick="autoemp()" class="accordion-toggle accordionemployee inactive" data-toggle="collapse" href="#collapseemp">
+        <div class="accordion-heading accordionb ">
+            <a id="ac2" style="color:white" class="accordion-group">
+                Werknemer
+            </a>
+        </div>
+        <div id="collapseemp" class="accordion-body collapse">
+            <div id="divcontact" class="accordion-inner">
+                <iframe id="iframeEmployees" src="/Employees/Index?idemployer=@idemployer" style="margin:0; border:none;overflow:hidden;width:100%;height:1000px" scrolling="yes" onload="unlock('divemplooyee')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="divBedrijfsinformatie" onclick="tooggle()" class="accordion-group accordionblue inactive">
+        <div class="accordion-heading accordionb ">
+            <a id="ac1" style="color:white" class="accordion-toggle" data-toggle="collapse" href="#collapseOne">
+                Bedrijfsinformatie
+            </a>
+        </div>
+        <div id="collapseOne" style="background-color:white" class="accordion-body collapse">
+            <div class="accordion-inner">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.idemployeer)
+                    @Html.HiddenFor(model => model.dateinsert)
+                    @Html.HiddenFor(model => model.userinsert)
+
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">Bewerk uw bedrijfsinformatie</h4>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.idemployertype, "Type werkgever", htmlAttributes: new { @class = "control -label" })
+                                                <div class="input-group">
+                                                    @Html.DropDownList("idemployertype", null, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.idemployertype, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.idbussinestype, "Soort bedrijf", htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.DropDownList("idbussinestype", null, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.idbussinestype, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.registrationname, htmlAttributes: new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.registrationname, "", new { @class = "text-danger" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.registrationname, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.tradename, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.tradename, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.tradename, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.companynature, htmlAttributes: new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.companynature, "", new { @class = "text-danger" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.companynature, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.permitnumner, htmlAttributes: new { @class = "control-label" })
+                                                @Html.ValidationMessageFor(model => model.permitnumner, "", new { @class = "text-danger" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.permitnumner, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.permitnumberdate, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.permitnumberdate, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.permitnumberdate, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.addressnro, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.addressnro, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.addressnro, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.aditionaddress, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.aditionaddress, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.aditionaddress, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.companypersonalnumber, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.companypersonalnumber, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.companypersonalnumber, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.legalform, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.legalform, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.legalform, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                @Html.LabelFor(model => model.egov, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.egov, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.egov, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-4">
+                                                @Html.LabelFor(model => model.svb, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.svb, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.svb, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-4">
+                                                @Html.LabelFor(model => model.kvk, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.kvk, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.kvk, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.isic, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.isic, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.isic, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.isicdesc, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.isicdesc, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.isicdesc, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.ISICArubaCode, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.ISICArubaCode, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.ISICArubaCode, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.ISICArubaCodeOmschrijving, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.ISICArubaCodeOmschrijving, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.ISICArubaCodeOmschrijving, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.isic4, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    @Html.EditorFor(model => model.isic4, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.isic4, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.telephone, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.telephone, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.telephone, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.mobilenumber, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.mobilenumber, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.mobilenumber, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.fax, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.fax, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.fax, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label" })
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-at"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @type = "email" } })
+                                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <div class="col-6">
+                                                @Html.LabelFor(model => model.website, htmlAttributes: new { @class = "control-label" })
+                                                <!-- Date mm/dd/yyyy -->
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-internet-explorer"></i>
+                                                    </div>
+                                                    @Html.EditorFor(model => model.website, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.website, "", new { @class = "text-danger" })
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*<div class="form-actions">
+                                            <div class="d-flex">
+                                                <div class="p-2">
+                                                    @Html.ActionLink("Contacts", "Index", "EmployerContacts", new { idemployer = Model.idemployeer }, new { @class = "btn btn-info" })
+
+                                                </div>
+                                                <div class="p-2">
+                                                    @Html.ActionLink("Worklist", "Index", "WorkListDatas", new { idemployer = Model.idemployeer }, new { @class = "btn btn-warning" })
+                                                </div>
+                                                <div class="p-2">
+                                                    @Html.ActionLink("Personel Requirement", "Index", "PersonelRequirements", new { idemployer = Model.idemployeer }, new { @class = "btn btn-success" })
+                                                </div>
+                                            </div>
+                                        </div>*@
+
+                                    <div class="form-actions">
+                                        <div class="d-flex flex-row-reverse">
+                                            <div class="p-2">
+                                                <button id="add_dictionary" name="add_dictionary" type="submit" value="Create" class="btn btn-info waves-effect waves-light btn-block">
+                                                    Edit
+                                                </button>
+                                            </div>
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <div class="p-2">
+                                                    <a class="btn waves-effect waves-light btn-block btn-secondary" href="@Url.Action("Index", "Employers")">Cancel</a>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="divContacten" onclick="autosize('iframeContact')" class="accordion-group accordionyellow inactive" data-toggle="collapse" href="#collapseTwo">
+        <div class="accordion-heading accordionb ">
+            <a id="ac2" style="color:white" class="accordion-toggle">
+                Contacten
+            </a>
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse">
+            <div id="divcontact" class="accordion-inner">
+                <iframe id="iframeContact" src="/EmployerContacts/Index?idemployer=@idemployer" style="margin:0; border:none;overflow:hidden;height:1000px;width:100%;" scrolling="yes" onload="unlock('divContacten')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="divWerklijstgegevens" onclick="autosize('iframeWolkList')" class="accordion-group accordiongreen inactive" data-toggle="collapse" href="#collapseThree">
+        <div class="accordion-heading accordionb ">
+            <a id="ac3" style="color:white" class="accordion-toggle">
+                Werklijstgegevens
+            </a>
+        </div>
+        <div id="collapseThree" class="accordion-body collapse">
+            <div id="divworklist" class="accordion-inner">
+                <iframe id="iframeWolkList" src="/WorkListDatas/Index?idemployer=@idemployer" style="margin:0; border:none;overflow:hidden;width:100%;height:1000px" scrolling="yes" onload="unlock('divWerklijstgegevens')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="divaanvullende" onclick="autosize('iframeAditional')" class="accordion-group accordionred inactive" data-toggle="collapse" href="#collapseFive">
+        <div class="accordion-heading accordionb ">
+            <a style="color:white" onclick="" class="accordion-toggle">
+                Aanvullende werkinformatie
+            </a>
+        </div>
+        <div id="collapseFive" class="accordion-body collapse">
+            <div id="divaditional" class="accordion-inner">
+                <iframe id="iframeAditional" src="/AditionalInformations/Index?idemployer=@idemployer" style="margin:0; border:none; overflow:hidden;width:100%;height:600px" scrolling="yes" onload="unlock('divaanvullende')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="divWerkgeversstatus" onclick="autosize('iframeStatus')" class="accordion-group accordionorange inactive" data-toggle="collapse" href="#collapseSix">
+        <div class="accordion-heading accordionb ">
+            <a style="color:white" onclick="" class="accordion-toggle">
+                Werkgeversstatus
+            </a>
+        </div>
+        <div id="collapseSix" class="accordion-body collapse">
+            <div id="divaditional" class="accordion-inner">
+                <iframe id="iframeStatus" src="/EmployerStatus/Index?idemployer=@idemployer" style="margin:0; border:none; overflow:hidden;width:100%;height:600px" scrolling="yes" onload="unlock('divWerkgeversstatus')"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="divUitzendkrachten" onclick="autosize('iframeUitzendkrachten')" class="accordion-group accordionprurple inactive" data-toggle="collapse" href="#collapseSeven">
+        <div class="accordion-heading accordionb ">
+            <a style="color:white" onclick="" class="accordion-toggle">
+                Uitzendkrachten
+            </a>
+        </div>
+        <div id="collapseSeven" class="accordion-body collapse">
+            <div id="divpersonelr" class="accordion-inner">
+                @if (showx == true)
+                {
+                    <iframe id="iframeUitzendkrachten" src="/TemporaryWorkers/Index?idemployer=@idemployer" style="margin:0; border:none; overflow:hidden;width:100%;height:600px" scrolling="yes" onload="unlock('divUitzendkrachten')"></iframe>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="divHuurder" onclick="autosize('iframeHuurder')" class="accordion-group accordioncleargreen inactive" data-toggle="collapse" href="#collapseEight">
+        <div class="accordion-heading accordionb ">
+            <a style="color:white" onclick="" class="accordion-toggle">
+                Huurder gegevens
+            </a>
+        </div>
+        <div id="collapseEight" class="accordion-body collapse">
+            <div id="divpersonelr" class="accordion-inner">
+                @if (showx == true)
+                {
+                    <iframe id="iframeHuurder" src="/HirerDatas/Index?idemployer=@idemployer" style="margin:0; border:none; overflow:hidden;width:100%;height:600px" scrolling="yes" onload="unlock('divHuurder')"></iframe>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="divPersonel" onclick="autosize('iframePersonelreq')" class="accordion-group accordionclearyellow inactive" data-toggle="collapse" href="#collapseFour">
+        <div class="accordion-heading accordionb ">
+            <a style="color:white" onclick="" class="accordion-toggle">
+                Personel Requirement
+            </a>
+        </div>
+        <div id="collapseFour" class="accordion-body collapse">
+            <div id="divpersonelre" class="accordion-inner">
+                <iframe id="iframePersonelreq" src="/PersonelRequirements/Index?idemployer=@idemployer" style="margin:0; border:none; overflow:hidden;width:100%;height:1000px" scrolling="yes" onload="unlock('divPersonel')"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        unlock('divBedrijfsinformatie');
+       
+        $("#permitnumberdate").datepicker({
+            autoclose: true,
+            dateFormat: 'dd/mm/yyyy'
+        });
+
+        var message = $("#idmessage").val();
+        if (message == '1') {
+            Swalsuccess();
+            $("#idmessage").val("0");
+        }
+    });
+
+    function tooggle() {
+        // $("#collapseOne").toggle()
+    }
+
+    function unlock(name) {
+        $("#" + name).removeClass("inactive");
+    }
+
+    function autosize(name) {
+        //$('#' + name).iframeHeight();
+    }
+
+    function Swalsuccess() {
+        swal("Success!", "succesvolle operatie", "success");
+    }
+
+</script>
