@@ -206,7 +206,7 @@ namespace Queue.Controllers
             BasicStatsModel bm = new BasicStatsModel();
             var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
                          where e.IdEmpresa == idcompany
-                         && (e.Date <= todate && e.Date >= fromdate)
+                         && e.Date >= fromdate && e.Date <= todate
                          select new AutomaticTakeTimeModel
                          {
                              Application = e.Application,
@@ -214,7 +214,38 @@ namespace Queue.Controllers
                              Date = e.Date
                          }).Distinct().ToList();
 
-            foreach (var grouping in query.GroupBy(g => g.Application).ToList())
+            foreach (var grouping in query.OrderByDescending(x => x.Time).GroupBy(g => g.Application).ToList())
+            {
+                var item = grouping;
+
+                double? time = query.Where(t => t.Application == item.Key).Select(f => f.Time).Sum();
+                bm.labels.Add(item.Key);
+                double? totalminutes = 0;
+
+                if (time != null && time > 0)
+                    totalminutes = (time / 60);
+
+                bm.data.Add(Math.Round(totalminutes.Value, 2));
+            }
+
+            return bm;
+        }
+
+        public BasicStatsModel TypeApp(string idcompany)
+        {
+            DateTime dateFrom = DateTime.Today.AddDays(-13);
+            DateTime dateTo = dateFrom.AddHours(23);
+            BasicStatsModel bm = new BasicStatsModel();
+            var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
+                         where e.IdEmpresa == idcompany && e.Date >= dateFrom && e.Date <= dateTo
+                         select new AutomaticTakeTimeModel
+                         {
+                             Application = e.Application,
+                             Time = e.Activity,
+                             Date = e.Date
+                         }).Distinct().ToList();
+
+            foreach (var grouping in query.OrderByDescending(x => x.Time).GroupBy(g => g.Application).ToList())
             {
                 var item = grouping;
 

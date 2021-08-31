@@ -356,7 +356,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
+    <Compile Include="Controllers\ReportApplicationsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\TimeTrackerController.cs" />
     <Compile Include="Controllers\Token\TokenValidationHandler.cs" />
@@ -428,6 +430,7 @@
       <DependentUpon>202107110347462_addFieldHoraryToEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agent_AutomaticTakeTime.cs" />
     <Compile Include="Models\Agent_Configuration.cs" />
@@ -460,6 +463,7 @@
     <Compile Include="Models\ResponseDTO\ResponseConfigurationDTO.cs" />
     <Compile Include="Models\ResponseDTO\ResponseLoginDTO.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Models\TimesUser.cs" />
     <Compile Include="Models\TrackerModel.cs" />
     <Compile Include="Models\TrakerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -9197,6 +9201,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\c3.css" />
+    <Content Include="Content\c3.min.css" />
     <Content Include="Content\css\Collapse.css" />
     <Content Include="Content\css\Spiner.css" />
     <Content Include="Content\ej2\bootstrap-dark.css" />
@@ -9290,6 +9296,7 @@
     <Content Include="js\pages\widget-inline-charts.js" />
     <Content Include="js\pages\widget-morris-charts.js" />
     <Content Include="js\template.js" />
+    <Content Include="LICENSE.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\vendor_components\apexcharts-bundle\dist\locales\de.json" />
@@ -10306,6 +10313,10 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\IISWithMigrations.pubxml" />
+    <Content Include="Scripts\c3.js" />
+    <Content Include="Scripts\c3.min.js" />
+    <Content Include="Scripts\d3.js" />
+    <Content Include="Scripts\d3.min.js" />
     <Content Include="Scripts\ej2\ej2.min.js" />
     <Content Include="Scripts\ej2\ej2.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -14483,6 +14494,7 @@
     <Content Include="Views\Agent_GroupHoraryDetail\Details.cshtml" />
     <Content Include="Views\Agent_GroupHoraryDetail\Edit.cshtml" />
     <Content Include="Views\Agent_GroupHoraryDetail\Index.cshtml" />
+    <Content Include="Views\ReportApplications\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\FilesRepository\" />

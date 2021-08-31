@@ -2320,7 +2320,6 @@ C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\bin\Microsoft.Owin.Securit
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.initial.resources
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.addstatusstring.resources
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.addstatusstring2.resources
@@ -2341,3 +2340,4 @@ C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.Cor
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.CopyComplete
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.dll
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.pdb
+C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csprojAssemblyReference.cache

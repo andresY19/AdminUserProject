@@ -48,20 +48,20 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
-                                @Html.LabelFor(model => model.HorarioInicia, htmlAttributes: new { @class = "control-label" })
-                                @Html.ValidationMessageFor(model => model.HorarioInicia, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.HorarioIniciaLunes, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.HorarioIniciaLunes, "", new { @class = "text-danger" })
                                 <div class="input-group">                                   
-                                    @Html.EditorFor(model => model.HorarioInicia, new { htmlAttributes = new { @class = "form-control required", @type = "Time" } })
+                                    @Html.EditorFor(model => model.HorarioIniciaLunes, new { htmlAttributes = new { @class = "form-control required", @type = "Time" } })
                                 </div>
                             </div>
                             <div class="col-6">
-                                @Html.LabelFor(model => model.HorarioTermina, htmlAttributes: new { @class = "control-label" })
-                                @Html.ValidationMessageFor(model => model.HorarioTermina, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.HorarioTerminaLunes, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.HorarioTerminaLunes, "", new { @class = "text-danger" })
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-phone"></i>
                                     </div>
-                                    @Html.EditorFor(model => model.HorarioTermina, new { htmlAttributes = new { @class = "form-control required", @type = "Time" } })
+                                    @Html.EditorFor(model => model.HorarioTerminaLunes, new { htmlAttributes = new { @class = "form-control required", @type = "Time" } })
                                 </div>
                             </div>
                         </div>

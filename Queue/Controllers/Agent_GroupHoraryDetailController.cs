@@ -61,7 +61,7 @@ namespace Queue.Controllers
             {
                 if (agent_GroupHoraryDetail.Type != EnumType.Seleccione)
                 {
-                    if (!(agent_GroupHoraryDetail.HourUntil < agent_GroupHoraryDetail.HourFrom))
+                    if (!(agent_GroupHoraryDetail.HourFrom < agent_GroupHoraryDetail.HourUntil))
                     {
                         string message = _validateHours(agent_GroupHoraryDetail.HourFrom, agent_GroupHoraryDetail.HourUntil, db.Agent_GroupHoraryDetail.Where(x => x.Day == agent_GroupHoraryDetail.Day).ToList());
                         if (string.IsNullOrEmpty(message))
@@ -78,7 +78,7 @@ namespace Queue.Controllers
                     }
                     else
                     {
-                        Warning("Hora hasta no puede ser mejor a la hora desde", string.Empty);
+                        Warning("Hora hasta no puede ser mayor a la hora desde", string.Empty);
                     }
                 }
                 else
