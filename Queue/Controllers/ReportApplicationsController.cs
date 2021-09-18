@@ -113,76 +113,109 @@ namespace Queue.Controllers
 
             return Json(entities, JsonRequestBehavior.AllowGet);
         }
-        // GET: ReportApplications/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
 
-        //// GET: ReportApplications/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+        public JsonResult ChartWeb(string dateFrom, string dateTo)
+        {
+            var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
+            OperationController opc = new OperationController();
+            DateTime fromdate = Convert.ToDateTime(dateFrom);
+            DateTime todate = Convert.ToDateTime(dateTo);
+            BasicStatsModel bm = opc.WebUsedApp(company, fromdate, todate);
 
-        //// POST: ReportApplications/Create
-        //[HttpPost]
-        //public ActionResult Create(FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
+            List<object> iData = new List<object>();
 
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+            //Creating sample data  
+            DataTable dt = new DataTable();
 
-        //// GET: ReportApplications/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
+            dt.Columns.Add("Aplicaciones", System.Type.GetType("System.String"));
+            dt.Columns.Add("Tiempo", System.Type.GetType("System.Int32"));
 
-        //// POST: ReportApplications/Edit/5
-        //[HttpPost]
-        //public ActionResult Edit(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
+            if (bm.labels.Count > 10)
+            {
+                for (var i = 0; i < 9; i++)
+                {
+                    DataRow dr = dt.NewRow();
+                    var str = bm.labels[i].ToString();
+                    dr["Aplicaciones"] = str.Substring(0, 15);
+                    dr["Tiempo"] = bm.data[i];
+                    dt.Rows.Add(dr);
+                }
+            }
+            else
+            {
+                for (var i = 0; i < bm.labels.Count; i++)
+                {
+                    DataRow dr = dt.NewRow();
+                    var str = bm.labels[i].ToString();
+                    dr["Aplicaciones"] = str.Substring(0, 15);
+                    dr["Tiempo"] = bm.data[i];
+                    dt.Rows.Add(dr);
+                }
+            }
 
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
-        //// GET: ReportApplications/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+            foreach (DataColumn dc in dt.Columns)
+            {
+                List<object> x = new List<object>();
+                x = (from DataRow drr in dt.Rows select drr[dc.ColumnName]).ToList();
+                iData.Add(x);
+            }
+            //Source data returned as JSON  
+            return Json(iData, JsonRequestBehavior.AllowGet);
+        }
+    
+        public JsonResult ChartImproductive(string dateFrom, string dateTo)
+        {
+            var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
+            OperationController opc = new OperationController();
+            DateTime fromdate = Convert.ToDateTime(dateFrom);
+            DateTime todate = Convert.ToDateTime(dateTo);
+            BasicStatsModel bm = opc.ImproductiveUsedApp(company, fromdate, todate);
 
-        //// POST: ReportApplications/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
+            List<object> iData = new List<object>();
 
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+            var programs = db.Agent_ProgramClasification.Where(t => t.Agent_Empresa.IdCompany.ToString() == company).ToList();
+
+            Agent_ProgramClasification p = new Agent_ProgramClasification();
+
+            TimesUser entities = new TimesUser();
+
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Aplicaciones", System.Type.GetType("System.String"));
+            dt.Columns.Add("Tiempo", System.Type.GetType("System.Int32"));
+
+            for (var i = 0; i < bm.labels.Count; i++)
+            {
+                foreach (var n in programs)
+                {
+                    p.name = n.name;
+                    p.clasification = n.clasification;
+
+                    if (bm.labels[i] == p.name)
+                    {
+                        if(p.clasification == 2)
+                        {
+                            //Creating sample data  
+                                    DataRow dr = dt.NewRow();
+                                    dr["Aplicaciones"] = bm.labels[i].ToString();
+                                    dr["Tiempo"] = bm.data[i];
+                                    dt.Rows.Add(dr);
+                        }   
+                    }
+
+                }
+            }
+
+            foreach (DataColumn dc in dt.Columns)
+            {
+                List<object> x = new List<object>();
+                x = (from DataRow drr in dt.Rows select drr[dc.ColumnName]).ToList();
+                iData.Add(x);
+            }
+
+            //Source data returned as JSON  
+            return Json(iData, JsonRequestBehavior.AllowGet);
+        }
     }
 }
