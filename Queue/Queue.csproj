@@ -14495,6 +14495,9 @@
     <Content Include="Views\Agent_GroupHoraryDetail\Edit.cshtml" />
     <Content Include="Views\Agent_GroupHoraryDetail\Index.cshtml" />
     <Content Include="Views\ReportApplications\Index.cshtml" />
+    <Content Include="Views\MainApplicationsAndSites\Index.cshtml" />
+    <Content Include="Views\MoreUsedApplications\Index.cshtml" />
+    <Content Include="Views\MainApplicationsAndSites\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\FilesRepository\" />

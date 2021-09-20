@@ -1,0 +1,456 @@
+﻿
+@{ ViewBag.Title = "Home Page"; }
+
+<!-- chartist CSS -->
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/css-chart/css-chart.css" rel="stylesheet">
+<link href="~/TemplateAssets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+<link href="~/TemplateAssets/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+@*<link href="~/Content/c3.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+
+<link href="~/TemplateAssets/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" type="text/javascript"></script>
+<script src="~/Scripts/c3.min.js"></script>
+<script src="~/Scripts/c3.min.js"></script>
+<script src="~/Scripts/d3.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@*@section head
+    {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    }*@
+
+<style>
+    .c3-chart-arcs .c3-chart-arcs-gauge-min {
+        fill: black;
+    }
+
+    .c3-chart-arcs .c3-chart-arcs-gauge-max {
+        fill: red;
+    }
+    /*    .c3-chart-arc .c3-gauge-value {
+        fill: teal;
+    }  */
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Selecciones rango de fechas a visualizar en las graficas</h4>
+                <div class="card-body">
+                    <div class="row button-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <label>Fecha desde</label>
+                                <div class="input-group">
+                                    <input id="DateFrom" type="date" value="@ViewBag.DateFrom.ToString("yyyy-MM-dd")" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Fecha Hasta</label>
+                                <div class="input-group">
+                                    <input id="DateTo" type="date" value="@ViewBag.DateTo.ToString("yyyy-MM-dd")" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-4">
+        <div class="col-md-12">
+            <div>
+                <input type="radio" id="rdnProductivo"
+                       name="contact" value="Productivo" checked>
+                <label for="rdnProductivo">Productivo</label>
+
+                <input type="radio" id="rdnImproductivo"
+                       name="contact" value="Improductivo">
+                <label for="rdnImproductivo">Improductivo</label>
+
+                <input type="radio" id="rdnNeutro"
+                       name="contact" value="Neutro">
+                <label for="rdnNeutro">Neutro</label>
+            </div>
+            <div class="card">
+                <div id="GaugeChart"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <canvas id="chartImproductive" style="padding: 0;margin: auto;display: block; "> </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8" style="width:100%;height:100%">
+        <div class="card">
+            <canvas id="ChartWeb" style="padding: 0;margin: auto;display: block; "> </canvas>
+        </div>
+    </div>
+    <div class="col-md-12" style="width:100%;height:100%">
+        <div class="card">
+            <canvas id="myChart" style="padding: 0;margin: auto;display: block; "> </canvas>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        var parameter = {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val()
+        };
+
+        var variable = $("input:radio[name=contact]:checked").val();
+        ReportMoreApplications(parameter);
+        ReportWebApplications(parameter);
+        ReportImproductiveApplications(parameter);
+        ReportSpedometer(variable);
+    });
+
+    var myNewChart = null;
+    var ChartWeb = null;
+    var ChartImproductive = null;
+    function ReportMoreApplications(parameter) {
+        $.ajax({
+            type: "POST",
+            url: "/ReportApplications/NewChart",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(parameter),
+            success: function (chData) {
+                var aData = chData;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Aplicaciones",
+                        data: aDatasets1,
+                        fill: false,
+                        display: false,
+                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                if (ChartWeb != null) {
+                    ChartWeb.destroy();
+                }
+                var ctx = $("#myChart").get(0).getContext("2d");
+                ChartWeb = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'APLICACIONES MAS USADAS' },
+                        legend: { position: 'bottom', display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+                ChartWeb.update();
+            }
+        });
+    }
+
+    function ReportWebApplications(parameter) {
+        $.ajax({
+            type: "POST",
+            url: "/ReportApplications/ChartWeb",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(parameter),
+            success: function (chData) {
+                var aData = chData;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Aplicaciones",
+                        data: aDatasets1,
+                        fill: false,
+                        display: false,
+                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                if (myNewChart != null) {
+                    myNewChart.destroy();
+                }
+                var ctx = $("#ChartWeb").get(0).getContext("2d");
+                myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'SITIOS WEB MAS USADOS' },
+                        legend: { position: 'bottom', display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+                myNewChart.update();
+            }
+        });
+    }
+
+    function ReportImproductiveApplications(parameter) {
+        $.ajax({
+            type: "POST",
+            url: "/ReportApplications/ChartImproductive",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(parameter),
+            success: function (chData) {
+                var aData = chData;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Aplicaciones",
+                        data: aDatasets1,
+                        fill: false,
+                        display: false,
+                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                if (ChartImproductive != null) {
+                    ChartImproductive.destroy();
+                }
+                var ctx = $("#chartImproductive").get(0).getContext("2d");
+                ChartImproductive = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'APLICACIONES IMPRODUCTIVAS MAS USADAS' },
+                        legend: { position: 'bottom', display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+                ChartImproductive.update();
+            }
+        });
+    }
+
+    $("input:radio[name=contact]").click(function () {
+        var variable = $("input:radio[name=contact]:checked").val();
+
+        switch (variable) {
+            case 'Productivo':
+                ReportSpedometer(variable)
+                break;
+            case 'Improductivo':
+                ReportSpedometer(variable)
+                break;
+            case 'Neutro':
+                ReportSpedometer(variable)
+                break;
+            default:
+                break;
+        }
+    })
+
+
+    function ReportSpedometer(variable) {
+        $.ajax({
+            type: "GET",
+            url: "/ReportApplications/GaugeChart",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                successFunc(response);
+            },
+        });
+
+        function successFunc(jsondata) {
+            switch (variable) {
+                case 'Productivo':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Productivo', jsondata.Productivo]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Female', jsondata.Male]
+            //        ]
+            //    });
+            //}, 1000);
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Others', jsondata.Others]
+            //        ]
+            //    });
+            //}, 2000);
+                    break;
+                case 'Improductivo':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Improductivo', jsondata.Improductivo]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Female', jsondata.Male]
+            //        ]
+            //    });
+            //}, 1000);
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Others', jsondata.Others]
+            //        ]
+            //    });
+            //}, 2000);
+                    break;
+                case 'Neutro':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Neutro', jsondata.Neutro]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Female', jsondata.Male]
+            //        ]
+            //    });
+            //}, 1000);
+            //setTimeout(function () {
+            //    chart.load({
+            //        columns: [
+            //            ['Others', jsondata.Others]
+            //        ]
+            //    });
+            //}, 2000);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    $('#DateFrom').change(function () {
+        var parameter = {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val()
+        };
+        ReportMoreApplications(parameter);
+        ReportWebApplications(parameter);
+        ReportImproductiveApplications(parameter);
+    });
+
+    $('#DateTo').change(function () {
+        var parameter = {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val()
+        };
+        ReportMoreApplications(parameter);
+        ReportWebApplications(parameter);
+        ReportImproductiveApplications(parameter);
+    });
+</script>
+
+@section Scripts {
+
+
+
+}
