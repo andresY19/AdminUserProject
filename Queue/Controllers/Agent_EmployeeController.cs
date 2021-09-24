@@ -74,6 +74,7 @@ namespace Queue.Controllers
             }
             ViewBag.Horarys = db.Agent_GroupHoraryDetail.Include(x => x.Agent_GroupHorary).Select(g => g.Agent_GroupHorary).Distinct().OrderBy(d => d.NameGroup).ToList();
             ViewBag.Jobs = db.Agent_Job.ToList();
+            
 
             return View(agent_Employee);
         }

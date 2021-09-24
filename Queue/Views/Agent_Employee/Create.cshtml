@@ -103,7 +103,18 @@
                                     <div class="input-group-addon">
                                         <i class="glyphicon glyphicon-lock"></i>
                                     </div>
-                                    @Html.DropDownList("Id_GroupHorary", new SelectList(ViewBag.Horarys, "Id_GroupHorary", "NameGroup"), new { @class = "form-control required" })
+                                   @* @Html.DropDownList("Id_GroupHorary", new SelectList(ViewBag.Horarys, "Id_GroupHorary", "NameGroup"), new { @class = "form-control required" })*@
+                                </div>
+                                <br />
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Agent_CompanyDepartment, htmlAttributes: new { @class = "control-label" })
+                                @Html.ValidationMessageFor(model => model.Agent_CompanyDepartment, "", new { @class = "text-danger" })
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                    </div>
+                                 @Html.DropDownList("Id", new SelectList(ViewBag.Department, "Id", "Name"), new { @class = "form-control required" })
                                 </div>
                                 <br />
                             </div>

@@ -17,6 +17,9 @@ namespace Queue.Controllers
         {
             ViewBag.DateFrom = DateTime.Now.AddDays(-2);
             ViewBag.DateTo = DateTime.Now;
+            Guid idcompany = Guid.Parse(Request.RequestContext.HttpContext.Session["Company"].ToString());
+            ViewBag.Department = db.Agent_CompanyDepartment.Where(x => x.IdCompany == idcompany).Distinct().ToList();
+           
             return View();
         }
 
