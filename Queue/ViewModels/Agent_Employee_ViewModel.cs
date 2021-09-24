@@ -30,5 +30,6 @@ namespace Queue.ViewModels
         [NotMapped]
         [DisplayName("Posible Error")]
         public string posibleerror { get; set; }
+
     }
 }

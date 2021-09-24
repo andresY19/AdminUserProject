@@ -429,10 +429,15 @@
     <Compile Include="Migrations\202107110347462_addFieldHoraryToEmployee.Designer.cs">
       <DependentUpon>202107110347462_addFieldHoraryToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109242210184_AddTableDepartaments.cs" />
+    <Compile Include="Migrations\202109242210184_AddTableDepartaments.Designer.cs">
+      <DependentUpon>202109242210184_AddTableDepartaments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agent_AutomaticTakeTime.cs" />
+    <Compile Include="Models\Agent_CompanyDepartment.cs" />
     <Compile Include="Models\Agent_Configuration.cs" />
     <Compile Include="Models\Agent_Employee.cs" />
     <Compile Include="Models\Agent_Empresa.cs" />
@@ -14578,6 +14583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107110347462_addFieldHoraryToEmployee.resx">
       <DependentUpon>202107110347462_addFieldHoraryToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109242210184_AddTableDepartaments.resx">
+      <DependentUpon>202109242210184_AddTableDepartaments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
