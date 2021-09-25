@@ -2620,7 +2620,6 @@ C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\Microsoft.Owin.Security.O
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csprojAssemblyReference.cache
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.initial.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.addstatusstring.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.addstatusstring2.resources
@@ -2644,3 +2643,4 @@ C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.pdb
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.AssemblyReference.cache
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
+C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources

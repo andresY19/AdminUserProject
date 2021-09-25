@@ -433,6 +433,10 @@
     <Compile Include="Migrations\202109242210184_AddTableDepartaments.Designer.cs">
       <DependentUpon>202109242210184_AddTableDepartaments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109250225189_deleteIdDepartment.cs" />
+    <Compile Include="Migrations\202109250225189_deleteIdDepartment.Designer.cs">
+      <DependentUpon>202109250225189_deleteIdDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -14586,6 +14590,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109242210184_AddTableDepartaments.resx">
       <DependentUpon>202109242210184_AddTableDepartaments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109250225189_deleteIdDepartment.resx">
+      <DependentUpon>202109250225189_deleteIdDepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
