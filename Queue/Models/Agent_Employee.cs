@@ -51,6 +51,7 @@ namespace Queue.Models
         [DisplayName("Horario")]
         public Guid? Id_GroupHorary { get; set; }
         public Agent_GroupHorary Agent_GroupHorary { get; set; }
+        [DisplayName("Departamento")]
         public Agent_CompanyDepartment Agent_CompanyDepartment { get; set; }
 
 
