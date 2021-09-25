@@ -23,12 +23,22 @@ namespace Queue.Controllers
             return View();
         }
 
-        public JsonResult NewChart(string dateFrom, string dateTo)
+        public JsonResult GetUser(string idDeparment)
+        {
+            var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
+            OperationController opc = new OperationController();
+            var result = db.Agent_Employee.Where(d => d.Agent_CompanyDepartment.Id.ToString() == idDeparment).ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult NewChart(string dateFrom, string dateTo, string idDeparment)
         {
             var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
             OperationController opc = new OperationController();
             DateTime fromdate = Convert.ToDateTime(dateFrom);
             DateTime todate = Convert.ToDateTime(dateTo);
+            BasicUserModel user = opc.GetUsers(company);
             BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
 
             List<object> iData = new List<object>();

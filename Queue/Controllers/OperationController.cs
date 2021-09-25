@@ -231,6 +231,23 @@ namespace Queue.Controllers
             return bm;
         }
 
+        public BasicUserModel GetUsers(string idcompany)
+        {
+            BasicUserModel bm = new BasicUserModel();
+            var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
+                         where e.IdEmpresa == idcompany
+                         select new AutomaticTakeTimeModel
+                         {
+                             UserName = e.UserName
+                         }).Distinct().ToList();
+
+            for (var i = 0; i < query.Count;i++)
+            {
+                bm.User.Add(query[i].UserName);
+            }
+            return bm;
+        }
+
         public BasicStatsModel TypeApp(string idcompany)
         {
             DateTime dateFrom = DateTime.Today.AddDays(-23);

@@ -2644,3 +2644,4 @@ C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.Ad
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
+C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.AssemblyReference.cache
