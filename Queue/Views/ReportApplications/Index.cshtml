@@ -45,27 +45,33 @@
                 <h4 class="card-title">Selecciones rango de fechas a visualizar en las graficas</h4>
                 <div class="card-body">
                     <div class="row button-group">
-                        <div class="row">
-                            <div class="col-6">
+                        <div class="row col-md-6">
+                            <div class="col-md-6">
                                 <label>Fecha desde</label>
                                 <div class="input-group">
                                     <input id="DateFrom" type="date" value="@ViewBag.DateFrom.ToString("yyyy-MM-dd")" />
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <label>Fecha Hasta</label>
                                 <div class="input-group">
                                     <input id="DateTo" type="date" value="@ViewBag.DateTo.ToString("yyyy-MM-dd")" />
                                 </div>
                             </div>
-                            <div class="col-6">
-                                @Html.LabelFor(model => model.Agent_CompanyDepartment, htmlAttributes: new { @class = "control-label" })
-                                
-                                <div class="input-group">
-                                  
-                                    @Html.DropDownList("Id", new SelectList(ViewBag.Department, "Id", "Name"), new { @class = "form-control" })
-                                </div>
-                                <br />
+                        </div>
+                        <div class="col-md-2">
+                            @Html.LabelFor(model => model.Agent_CompanyDepartment, htmlAttributes: new { @class = "control-label" })
+
+                            <div class="input-group">
+
+                                @Html.DropDownList("Id", new SelectList(ViewBag.Department, "Id", "Name"), new { @class = "form-control" })
+                            </div>
+                            <br />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Usuario</label>
+                            <div class="input-group">
+                                <select style="height:25px" id="ddlUser" class="form-control selectpicker pull-left"></select>
                             </div>
                         </div>
                     </div>
