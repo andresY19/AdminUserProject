@@ -39,45 +39,28 @@ namespace Queue.Controllers
             DateTime fromdate = Convert.ToDateTime(dateFrom);
             DateTime todate = Convert.ToDateTime(dateTo);
             BasicUserModel user = opc.GetUsers(company);
-            BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
+            //BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
+
+            var UserDist = user.User.Distinct().ToList();
+            var ApplicationDist = user.Application.Distinct().ToList();
 
             List<object> iData = new List<object>();
+            ArrayUsersModel UserModel = new ArrayUsersModel();
+            Random rnd = new Random();
+            //var iData = new Dictionary<string, List<string>>();
 
-            //Creating sample data  
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Aplicaciones", System.Type.GetType("System.String"));
-            dt.Columns.Add("Tiempo", System.Type.GetType("System.Int32"));
-
-            if (bm.labels.Count > 10)
+            for (var i = 0; i < UserDist.Count; i++)
             {
-                for (var i = 0; i < 9; i++)
-                {
-                    DataRow dr = dt.NewRow();
-                    dr["Aplicaciones"] = bm.labels[i].ToString();
-                    dr["Tiempo"] = bm.data[i];
-                    dt.Rows.Add(dr);
-                }
+                UserModel.User = UserDist[i];
             }
-            else
+            for (var k = 0; k < ApplicationDist.Count; k++)
             {
-                for (var i = 0; i < bm.labels.Count; i++)
-                {
-                    DataRow dr = dt.NewRow();
-                    dr["Aplicaciones"] = bm.labels[i].ToString();
-                    dr["Tiempo"] = bm.data[i];
-                    dt.Rows.Add(dr);
-                }
-            }    
-            
-
-            foreach (DataColumn dc in dt.Columns)
-            {
-                List<object> x = new List<object>();
-                x = (from DataRow drr in dt.Rows select drr[dc.ColumnName]).ToList();
-                iData.Add(x);
+                UserModel.Application.Add(ApplicationDist[k]);
+                UserModel.Time.Add(rnd.Next(1, 50));
             }
-            //Source data returned as JSON  
+
+            iData.Add(UserModel);
+
             return Json(iData, JsonRequestBehavior.AllowGet);
         }
 

@@ -238,12 +238,16 @@ namespace Queue.Controllers
                          where e.IdEmpresa == idcompany
                          select new AutomaticTakeTimeModel
                          {
-                             UserName = e.UserName
+                             UserName = e.UserName,
+                             Application = e.Application,
+                             Time = e.Activity
                          }).Distinct().ToList();
 
             for (var i = 0; i < query.Count;i++)
             {
                 bm.User.Add(query[i].UserName);
+                bm.Application.Add(query[i].Application);
+                bm.Time.Add((double)query[i].Time);
             }
             return bm;
         }

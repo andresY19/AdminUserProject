@@ -150,39 +150,84 @@
             dataType: "json",
             data: JSON.stringify(parameter),
             success: function (chData) {
-                var aData = chData;
-                var aLabels = aData[0];
-                var aDatasets1 = aData[1];
-                var dataT = {
-                    labels: aLabels,
-                    datasets: [{
-                        label: "Aplicaciones",
-                        data: aDatasets1,
-                        fill: false,
-                        display: false,
-                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
-                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
-                        borderWidth: 1
-                    }]
+
+                var densityCanvas = document.getElementById("myChart");
+
+                Chart.defaults.global.defaultFontFamily = "Lato";
+                Chart.defaults.global.defaultFontSize = 18;
+
+                var densityData = {
+                    label: chData[0].User,
+                    data: chData[0].Time,
+                    backgroundColor: 'rgba(0, 99, 132, 0.6)',
+                    borderWidth: 0,
+                    yAxisID: "y-axis-density"
                 };
-                if (ChartWeb != null) {
-                    ChartWeb.destroy();
-                }
-                var ctx = $("#myChart").get(0).getContext("2d");
-                ChartWeb = new Chart(ctx, {
-                    type: 'bar',
-                    data: dataT,
-                    options: {
-                        responsive: true,
-                        title: { display: true, text: 'APLICACIONES MAS USADAS' },
-                        legend: { position: 'bottom', display: false },
-                        scales: {
-                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
-                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
-                        },
+
+                var gravityData = {
+                    label: chData[0].User,
+                    data: chData[0].Time,
+                    backgroundColor: 'rgba(99, 132, 0, 0.6)',
+                    borderWidth: 0,
+/*                    yAxisID: "y-axis-gravity"*/
+                };
+
+                var planetData = {
+                    labels: chData[0].Application,
+                    datasets: [densityData, gravityData]
+                };
+
+                var chartOptions = {
+                    scales: {
+                        xAxes: [{
+                            barPercentage: 1,
+                            categoryPercentage: 0.6
+                        }],
+                        yAxes: [{
+                            id: "y-axis-density"
+                        }]
                     }
+                };
+
+                var barChart = new Chart(densityCanvas, {
+                    type: 'bar',
+                    data: planetData,
+                    options: chartOptions
                 });
-                ChartWeb.update();
+
+                //var aData = chData;
+                //var aLabels = aData[0];
+                //var aDatasets1 = aData[1];
+                //var dataT = {
+                //    labels: aLabels,
+                //    datasets: [{
+                //        label: "Aplicaciones",
+                //        data: aDatasets1,
+                //        fill: false,
+                //        display: false,
+                //        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                //        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                //        borderWidth: 1
+                //    }]
+                //};
+                //if (ChartWeb != null) {
+                //    ChartWeb.destroy();
+                //}
+                //var ctx = $("#myChart").get(0).getContext("2d");
+                //ChartWeb = new Chart(ctx, {
+                //    type: 'bar',
+                //    data: dataT,
+                //    options: {
+                //        responsive: true,
+                //        title: { display: true, text: 'APLICACIONES MAS USADAS' },
+                //        legend: { position: 'bottom', display: false },
+                //        scales: {
+                //            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                //            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                //        },
+                //    }
+                //});
+                //ChartWeb.update();
             }
         });
     }

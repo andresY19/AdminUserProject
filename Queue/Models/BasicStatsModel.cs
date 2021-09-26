@@ -14,5 +14,21 @@ namespace Queue.Models
     public class BasicUserModel
     {
         public List<string> User = new List<string>();
+        public List<string> Application = new List<string>();
+        public List<double> Time = new List<double>();
+    }
+
+    public class ArrayUsersModel
+    {
+        public string User;
+        public List<string> Application = new List<string>();
+        public List<double> Time = new List<double>();
+        //public List<ApplicationModel> Data = new List<ApplicationModel>();
+    }
+
+    public class ApplicationModel
+    {
+        public string Application;
+        public double Time;
     }
 }
