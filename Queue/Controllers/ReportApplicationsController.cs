@@ -1,4 +1,5 @@
-﻿using Queue.DAL;
+﻿using Newtonsoft.Json;
+using Queue.DAL;
 using Queue.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace Queue.Controllers
 {
@@ -38,28 +40,58 @@ namespace Queue.Controllers
             OperationController opc = new OperationController();
             DateTime fromdate = Convert.ToDateTime(dateFrom);
             DateTime todate = Convert.ToDateTime(dateTo);
-            BasicUserModel user = opc.GetUsers(company);
+            BasicUserModel user = opc.GetUsers(company, fromdate, todate);
             //BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
-
+            var UserByDeparment = db.Agent_Employee.Where(x => x.Agent_CompanyDepartment.Id.ToString() == idDeparment).Select(c => c.Usuario).Distinct().ToList();
             var UserDist = user.User.Distinct().ToList();
+
+            List<string> UserFilter = new List<string>();
+
+            for(var contUser = 0;contUser < UserByDeparment.Count; contUser++)
+            {
+                for(var distinct = 0;distinct < UserDist.Count; distinct++)
+                {
+                    if (UserByDeparment[contUser] == UserDist[distinct])
+                    {
+                        UserFilter.Add(UserDist[distinct]);
+                    }
+                }
+            }
+
             var ApplicationDist = user.Application.Distinct().ToList();
 
             List<object> iData = new List<object>();
-            ArrayUsersModel UserModel = new ArrayUsersModel();
+            //ArrayUsersModel UserModel = new ArrayUsersModel();
             Random rnd = new Random();
-            //var iData = new Dictionary<string, List<string>>();
+            string UpdateDate = "";
+            double SumTime = 0;
 
-            for (var i = 0; i < UserDist.Count; i++)
-            {
-                UserModel.User = UserDist[i];
-            }
-            for (var k = 0; k < ApplicationDist.Count; k++)
-            {
-                UserModel.Application.Add(ApplicationDist[k]);
-                UserModel.Time.Add(rnd.Next(1, 50));
-            }
 
-            iData.Add(UserModel);
+            for (var i = 0; i < UserFilter.Count; i++)
+            {
+                ArrayUsersModel UserModel = new ArrayUsersModel();
+                UserModel.User = UserFilter[i];
+
+                for (var k = 0; k < ApplicationDist.Count; k++)
+                {
+                    UserModel.Application.Add(ApplicationDist[k]);
+                    for(var cont = 0; cont < user.User.Count; cont++)
+                    {
+                        if(user.User[cont] == UserFilter[i] && user.Application[cont] == ApplicationDist[k])
+                        {
+                            SumTime = SumTime + user.Time[cont];
+                        }
+                    }
+                    UserModel.Time.Add(SumTime);
+                    SumTime = 0;
+                    //UserModel.Time.Add(rnd.Next(1, 50));
+                }
+
+                UpdateDate = JsonConvert.SerializeObject(UserModel);
+
+                iData.Add(UpdateDate);
+
+            }
 
             return Json(iData, JsonRequestBehavior.AllowGet);
         }

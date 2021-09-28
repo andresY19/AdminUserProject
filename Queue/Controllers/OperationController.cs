@@ -231,11 +231,12 @@ namespace Queue.Controllers
             return bm;
         }
 
-        public BasicUserModel GetUsers(string idcompany)
+        public BasicUserModel GetUsers(string idcompany, DateTime fromdate, DateTime todate)
         {
             BasicUserModel bm = new BasicUserModel();
             var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
-                         where e.IdEmpresa == idcompany
+                         where e.IdEmpresa == idcompany 
+                         && e.Date >= fromdate && e.Date <= todate
                          select new AutomaticTakeTimeModel
                          {
                              UserName = e.UserName,
