@@ -73,7 +73,7 @@ namespace Queue.Controllers
                 Random rnd = new Random();
                 string UpdateDate = "";
                 double SumTime = 0;
-
+                
                 for (var k = 0; k < ApplicationDist.Count; k++)
                 {
                     UserModel.Application.Add(ApplicationDist[k]);
@@ -87,8 +87,13 @@ namespace Queue.Controllers
                     var round = Math.Round((SumTime / 3600), 2);
                     UserModel.Time.Add(round);
                     SumTime = 0;
-                    //UserModel.Time.Add(rnd.Next(1, 50));
-                }
+                    UserModel.User = User.User[0];
+                };
+                //if (User.User[0].ToString()== idUser)
+                //{
+                //    UserModel.User = idUser;
+                //}
+                
 
                 UpdateDate = JsonConvert.SerializeObject(UserModel);
 
@@ -177,6 +182,7 @@ namespace Queue.Controllers
                     iData.Add(UpdateDate);
 
                 }
+                    
                     return Json(iData, JsonRequestBehavior.AllowGet);
                 }
                 else

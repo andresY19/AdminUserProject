@@ -114,7 +114,8 @@
         </div>*@
     <div class="col-md-12" style="width:100%;height:100%">
         <div class="card">
-            <canvas id="myChart" style="padding: 0;margin: auto;display: block; "> </canvas>
+            <div class="MensajeInfor" style="display:block;"><h4>Debe seleccionar un rango de fecha y el usuario o si quiere visualizar toda la actividad deje la selección actual en "todos" y elija el rango de fecha.</h4></div>
+                <canvas id="myChart" style="padding: 0;margin: auto;display: block; "></canvas>
         </div>
     </div>
 
@@ -157,66 +158,68 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify(parameter),
-            success: function (chData) {
-                /* chData.length;*/
-                /*                const obj = JSON.parse(chData[0]);*/
-                console.log(chData)
+            success: async function (chData) {
+              
+                if (chData.length > 0) {
+                     await $(".MensajeInfor").hide();                    
+                     Chart.defaults.global.defaultFontFamily = "Lato";
+                    Chart.defaults.global.defaultFontSize = 18;
+                    var arrayUser = [];
 
-                Chart.defaults.global.defaultFontFamily = "Lato";
-                Chart.defaults.global.defaultFontSize = 18;
-                var arrayUser = [];
 
+                    var dynamicColors = function () {
+                        var r = Math.floor(Math.random() * 255);
+                        var g = Math.floor(Math.random() * 255);
+                        var b = Math.floor(Math.random() * 255);
+                        return "rgb(" + r + "," + g + "," + b + ")";
+                    };
+                    var ListApplication = {};
+                    console.log(chData)
+                    chData.forEach(x => {
 
-                var dynamicColors = function () {
-                    var r = Math.floor(Math.random() * 255);
-                    var g = Math.floor(Math.random() * 255);
-                    var b = Math.floor(Math.random() * 255);
-                    return "rgb(" + r + "," + g + "," + b + ")";
-                };
-                var ListApplication = {};
-                chData.forEach(x => {
+                        var List = JSON.parse(x);
+                        ListApplication = List.Application;
+                        var densityData = {
+                            label: List.User ? List.User : "No se registro actividad en las fechas establecidas o el usuario no tiene registro",
+                            data: List.Time,
+                            backgroundColor: dynamicColors(),
+                            borderWidth: 0,
+                            yAxisID: "y-axis-density"
+                        };
 
-                    var List = JSON.parse(x);                    
-                    ListApplication = List.Application;
-                    var densityData = {
-                        label: List.User,
-                        data: List.Time,
-                        backgroundColor: dynamicColors(),
-                        borderWidth: 0,
-                        yAxisID: "y-axis-density"
+                        arrayUser.push(densityData);
+                    });
+
+                    var planetData = {
+                        labels: ListApplication,
+                        datasets: arrayUser
                     };
 
-                    arrayUser.push(densityData);
-                });
+                    var chartOptions = {
+                        scales: {
+                            xAxes: [{
+                                barPercentage: 1,
+                                categoryPercentage: 0.6
+                            }],
+                            yAxes: [{
+                                id: "y-axis-density"
+                            }]
+                        }
+                    };
 
-                var planetData = {
-                    labels: ListApplication,
-                    datasets: arrayUser
-                };
-
-                var chartOptions = {
-                    scales: {
-                        xAxes: [{
-                            barPercentage: 1,
-                            categoryPercentage: 0.6
-                        }],
-                        yAxes: [{
-                            id: "y-axis-density"
-                        }]
+                    if (barChart != null) {
+                        barChart.destroy();
                     }
-                };
+                    var ctx = $("#myChart").get(0).getContext("2d");
+                    barChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: planetData,
+                        options: chartOptions
+                    });
 
-                if (barChart != null) {
-                    barChart.destroy();
-                }
-                var ctx = $("#myChart").get(0).getContext("2d");
-                barChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: planetData,
-                    options: chartOptions
-                });
+                    barChart.update();
 
-                barChart.update();
+                }          
             }
         });
     }
@@ -258,6 +261,7 @@
 
             };
             console.log(parameter2);
+            
             await ReportMoreApplications(parameter2);
             //ReportWebApplications(parameter);
             //ReportImproductiveApplications(parameter);
@@ -529,25 +533,27 @@
         }
     }
 
-    $('#DateFrom').change(function () {
+    $('#DateFrom').change(async function () {
         var parameter = {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
             idDeparment: $("#Id").val(),
             idUser: $("#ddlUser").val()
         };
+       
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
         //ReportImproductiveApplications(parameter);
     });
 
-    $('#DateTo').change(function () {
+    $('#DateTo').change(async function () {
         var parameter = {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
             idDeparment: $("#Id").val(),
             idUser: $("#ddlUser").val()
         };
+        
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
         //ReportImproductiveApplications(parameter);
