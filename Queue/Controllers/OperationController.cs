@@ -252,7 +252,29 @@ namespace Queue.Controllers
             }
             return bm;
         }
+        public BasicUserModel GetUserByName(string idcompany, DateTime fromdate, DateTime todate,string Name)
+        {
 
+            BasicUserModel bm = new BasicUserModel();
+            var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
+                         where e.IdEmpresa == idcompany
+                         && e.Date >= fromdate && e.Date <= todate 
+                         && e.UserName== Name
+                         select new AutomaticTakeTimeModel
+                         {
+                             UserName = e.UserName,
+                             Application = e.Application,
+                             Time = e.Activity
+                         }).Distinct().ToList();
+
+            for (var i = 0; i < query.Count; i++)
+            {
+                bm.User.Add(query[i].UserName);
+                bm.Application.Add(query[i].Application);
+                bm.Time.Add((double)query[i].Time);
+            }
+            return bm;
+        }
         public BasicStatsModel TypeApp(string idcompany)
         {
             DateTime dateFrom = DateTime.Today.AddDays(-23);

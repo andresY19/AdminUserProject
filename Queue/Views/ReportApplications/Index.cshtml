@@ -71,7 +71,10 @@
                         <div class="col-md-2">
                             <label>Usuario</label>
                             <div class="input-group">
-                                <select style="height:25px" id="ddlUser" class="form-control selectpicker pull-left"></select>
+                                <select style="height:25px" id="ddlUser" class="form-control selectpicker pull-left">
+                                    <option value="0">Todos</option>
+                                </select>
+                                
                             </div>
                         </div>
                     </div>
@@ -80,35 +83,35 @@
         </div>
     </div>
     @*<div class="row col-md-4">
-        <div class="col-md-12">
-            <div>
-                <input type="radio" id="rdnProductivo"
-                       name="contact" value="Productivo" checked>
-                <label for="rdnProductivo">Productivo</label>
+            <div class="col-md-12">
+                <div>
+                    <input type="radio" id="rdnProductivo"
+                           name="contact" value="Productivo" checked>
+                    <label for="rdnProductivo">Productivo</label>
 
-                <input type="radio" id="rdnImproductivo"
-                       name="contact" value="Improductivo">
-                <label for="rdnImproductivo">Improductivo</label>
+                    <input type="radio" id="rdnImproductivo"
+                           name="contact" value="Improductivo">
+                    <label for="rdnImproductivo">Improductivo</label>
 
-                <input type="radio" id="rdnNeutro"
-                       name="contact" value="Neutro">
-                <label for="rdnNeutro">Neutro</label>
+                    <input type="radio" id="rdnNeutro"
+                           name="contact" value="Neutro">
+                    <label for="rdnNeutro">Neutro</label>
+                </div>
+                <div class="card">
+                    <div id="GaugeChart"></div>
+                </div>
             </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <canvas id="chartImproductive" style="padding: 0;margin: auto;display: block; "> </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="width:100%;height:100%">
             <div class="card">
-                <div id="GaugeChart"></div>
+                <canvas id="ChartWeb" style="padding: 0;margin: auto;display: block; "> </canvas>
             </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card">
-                <canvas id="chartImproductive" style="padding: 0;margin: auto;display: block; "> </canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8" style="width:100%;height:100%">
-        <div class="card">
-            <canvas id="ChartWeb" style="padding: 0;margin: auto;display: block; "> </canvas>
-        </div>
-    </div>*@
+        </div>*@
     <div class="col-md-12" style="width:100%;height:100%">
         <div class="card">
             <canvas id="myChart" style="padding: 0;margin: auto;display: block; "> </canvas>
@@ -121,22 +124,26 @@
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script>
-    jQuery(document).ready(function () {
-        var parameter = {
+    jQuery(document).ready(async function  () {      
+       
+        var parameter = await {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
+            idUser: $("#ddlUser").val(),
             idDeparment: $("#Id").val()
-        };
 
-        var parameter2 = {
-            idDeparment: $("#Id").val()
-        }
-/*        var variable = $("input:radio[name=contact]:checked").val();*/
-        ReportMoreApplications(parameter);
-        getUser(parameter2);
+        };
+        var parameter2 = await {
+            idDeparment: $("#Id").val()            
+        }        
+        /*        var variable = $("input:radio[name=contact]:checked").val();*/
+        await getUser(parameter2);
+        
+        await ReportMoreApplications(parameter);        
         //ReportWebApplications(parameter);
-        //ReportImproductiveApplications(parameter);
+        //ReportImproductiveApplications(parameter); //acabados de descomentar comentar
         //ReportSpedometer(variable);
+        
     });
 
     var myNewChart = null;
@@ -152,7 +159,8 @@
             data: JSON.stringify(parameter),
             success: function (chData) {
                 /* chData.length;*/
-/*                const obj = JSON.parse(chData[0]);*/
+                /*                const obj = JSON.parse(chData[0]);*/
+                console.log(chData)
 
                 Chart.defaults.global.defaultFontFamily = "Lato";
                 Chart.defaults.global.defaultFontSize = 18;
@@ -168,7 +176,7 @@
                 var ListApplication = {};
                 chData.forEach(x => {
 
-                    var List = JSON.parse(x);
+                    var List = JSON.parse(x);                    
                     ListApplication = List.Application;
                     var densityData = {
                         label: List.User,
@@ -227,23 +235,33 @@
             }
         });
     }
-
     $('#Id').change(
-        function () {
-            $("#ddlUser").empty();
+        async function () {
+
             var parameter = {
                 idDeparment: $("#Id").val()
             };
-            var parameter2 = {
-                dateFrom: $("#DateFrom").val(),
-                dateTo: $("#DateTo").val(),
-                idDeparment: $("#Id").val()
-            };
             getUser(parameter);
-            ReportMoreApplications(parameter2);
             //ReportWebApplications(parameter);
             //ReportImproductiveApplications(parameter);
-        })
+        });
+    
+    $('#ddlUser').change(
+        async function () {
+            await $("#myChart").empty();
+
+            var parameter2 = await{
+                dateFrom: $("#DateFrom").val(),
+                dateTo: $("#DateTo").val(),
+                idUser: $("#ddlUser").val(),
+                idDeparment: $("#Id").val()
+
+            };
+            console.log(parameter2);
+            await ReportMoreApplications(parameter2);
+            //ReportWebApplications(parameter);
+            //ReportImproductiveApplications(parameter);
+        });
 
 
     function ReportWebApplications(parameter) {
@@ -278,7 +296,11 @@
                     data: dataT,
                     options: {
                         responsive: true,
-                        title: { display: true, text: 'SITIOS WEB MAS USADOS' },
+                        title: {
+                            display: true, text: 'SITIOS WEB MAS USADOS'
+                        },
+
+
                         legend: { position: 'bottom', display: false },
                         scales: {
                             xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
@@ -511,7 +533,8 @@
         var parameter = {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
-            idDeparment: $("#Id").val()
+            idDeparment: $("#Id").val(),
+            idUser: $("#ddlUser").val()
         };
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
@@ -522,7 +545,8 @@
         var parameter = {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
-            idDeparment: $("#Id").val()
+            idDeparment: $("#Id").val(),
+            idUser: $("#ddlUser").val()
         };
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);

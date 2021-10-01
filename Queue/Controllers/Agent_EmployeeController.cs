@@ -106,9 +106,9 @@ namespace Queue.Controllers
                         Success("Archivo procesado exitosamente");
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-
+                    throw ex;
                 }
             }
             else

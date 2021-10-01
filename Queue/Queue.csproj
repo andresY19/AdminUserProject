@@ -354,6 +354,8 @@
     <Compile Include="Controllers\CaptureController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoreUsedApplicationsController.cs" />
+    <Compile Include="Controllers\MainApplicationsAndSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\ReportApplicationsController.cs" />
@@ -10319,6 +10321,13 @@
     <Content Include="monitortracker.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Controllers\Employers\_ContactCreate.cshtml" />
+    <Content Include="Controllers\Employers\_ContactIndex.cshtml" />
+    <Content Include="Controllers\Employers\Create.cshtml" />
+    <Content Include="Controllers\Employers\Delete.cshtml" />
+    <Content Include="Controllers\Employers\Details.cshtml" />
+    <Content Include="Controllers\Employers\Edit.cshtml" />
+    <Content Include="Controllers\Employers\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\IISWithMigrations.pubxml" />
@@ -14506,7 +14515,6 @@
     <Content Include="Views\ReportApplications\Index.cshtml" />
     <Content Include="Views\MainApplicationsAndSites\Index.cshtml" />
     <Content Include="Views\MoreUsedApplications\Index.cshtml" />
-    <Content Include="Views\MainApplicationsAndSites\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\FilesRepository\" />

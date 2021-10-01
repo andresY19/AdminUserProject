@@ -2340,6 +2340,9 @@ C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.Cor
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.CopyComplete
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.dll
 C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.pdb
+C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
+C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
+C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.AssemblyReference.cache
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\mongocrypt.dll
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\snappy32.dll
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\bin\snappy64.dll
@@ -2635,13 +2638,11 @@ C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.up
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.changeformattime.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.changevaluedata.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.addFieldHoraryToEmployee.resources
+C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
+C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.GenerateResource.cache
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.CoreCompileInputs.cache
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.CopyComplete
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.dll
 C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.pdb
-C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
-C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.AddTableDepartaments.resources
-C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
-C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.Migrations.deleteIdDepartment.resources
-C:\Users\WA-KEVIN\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.AssemblyReference.cache
+C:\Users\yeffe\source\repos\AdminUserProject\Queue\obj\Debug\Queue.csproj.AssemblyReference.cache
