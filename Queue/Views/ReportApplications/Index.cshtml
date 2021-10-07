@@ -74,7 +74,7 @@
                                 <select style="height:25px" id="ddlUser" class="form-control selectpicker pull-left">
                                     <option value="0">Todos</option>
                                 </select>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
     <div class="col-md-12" style="width:100%;height:100%">
         <div class="card">
             <div class="MensajeInfor" style="display:block;"><h4>Debe seleccionar un rango de fecha y el usuario o si quiere visualizar toda la actividad deje la selección actual en "todos" y elija el rango de fecha.</h4></div>
-                <canvas id="myChart" style="padding: 0;margin: auto;display: block; "></canvas>
+            <canvas id="myChart" style="padding: 0;margin: auto;display: block; "></canvas>
         </div>
     </div>
 
@@ -125,8 +125,8 @@
 
 
 <script>
-    jQuery(document).ready(async function  () {      
-       
+    jQuery(document).ready(async function () {
+
         var parameter = await {
             dateFrom: $("#DateFrom").val(),
             dateTo: $("#DateTo").val(),
@@ -135,16 +135,16 @@
 
         };
         var parameter2 = await {
-            idDeparment: $("#Id").val()            
-        }        
+            idDeparment: $("#Id").val()
+        }
         /*        var variable = $("input:radio[name=contact]:checked").val();*/
         await getUser(parameter2);
-        
-        await ReportMoreApplications(parameter);        
+
+        await ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
         //ReportImproductiveApplications(parameter); //acabados de descomentar comentar
         //ReportSpedometer(variable);
-        
+
     });
 
     var myNewChart = null;
@@ -159,10 +159,10 @@
             dataType: "json",
             data: JSON.stringify(parameter),
             success: async function (chData) {
-              
+
                 if (chData.length > 0) {
-                     await $(".MensajeInfor").hide();                    
-                     Chart.defaults.global.defaultFontFamily = "Lato";
+                    await $(".MensajeInfor").hide();
+                    Chart.defaults.global.defaultFontFamily = "Lato";
                     Chart.defaults.global.defaultFontSize = 18;
                     var arrayUser = [];
 
@@ -219,7 +219,7 @@
 
                     barChart.update();
 
-                }          
+                }
             }
         });
     }
@@ -248,12 +248,12 @@
             //ReportWebApplications(parameter);
             //ReportImproductiveApplications(parameter);
         });
-    
+
     $('#ddlUser').change(
         async function () {
             await $("#myChart").empty();
 
-            var parameter2 = await{
+            var parameter2 = await {
                 dateFrom: $("#DateFrom").val(),
                 dateTo: $("#DateTo").val(),
                 idUser: $("#ddlUser").val(),
@@ -261,7 +261,7 @@
 
             };
             console.log(parameter2);
-            
+
             await ReportMoreApplications(parameter2);
             //ReportWebApplications(parameter);
             //ReportImproductiveApplications(parameter);
@@ -540,7 +540,7 @@
             idDeparment: $("#Id").val(),
             idUser: $("#ddlUser").val()
         };
-       
+
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
         //ReportImproductiveApplications(parameter);
@@ -553,7 +553,7 @@
             idDeparment: $("#Id").val(),
             idUser: $("#ddlUser").val()
         };
-        
+
         ReportMoreApplications(parameter);
         //ReportWebApplications(parameter);
         //ReportImproductiveApplications(parameter);

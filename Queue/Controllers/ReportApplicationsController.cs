@@ -32,7 +32,7 @@ namespace Queue.Controllers
 
                 throw err;
             }
-            
+
         }
 
         public JsonResult GetUser(string idDeparment)
@@ -49,7 +49,7 @@ namespace Queue.Controllers
             {
                 throw err;
             }
-            
+
         }
         public JsonResult UserbyDepartamentData(string dateFrom, string dateTo, string idUser, string idDeparment)
         {
@@ -60,7 +60,7 @@ namespace Queue.Controllers
                 OperationController opc = new OperationController();
                 DateTime fromdate = Convert.ToDateTime(dateFrom);
                 DateTime todate = Convert.ToDateTime(dateTo);
-                
+
                 //BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
 
                 var UserByDeparment = db.Agent_Employee.Where(x => x.Agent_CompanyDepartment.Id.ToString() == idDeparment && x.idEmployee.ToString() == idUser)
@@ -73,7 +73,7 @@ namespace Queue.Controllers
                 Random rnd = new Random();
                 string UpdateDate = "";
                 double SumTime = 0;
-                
+
                 for (var k = 0; k < ApplicationDist.Count; k++)
                 {
                     UserModel.Application.Add(ApplicationDist[k]);
@@ -93,7 +93,7 @@ namespace Queue.Controllers
                 //{
                 //    UserModel.User = idUser;
                 //}
-                
+
 
                 UpdateDate = JsonConvert.SerializeObject(UserModel);
 
@@ -101,7 +101,7 @@ namespace Queue.Controllers
 
 
                 return Json(iData, JsonRequestBehavior.AllowGet);
-            
+
             }
             catch (Exception ex)
             {
@@ -110,96 +110,96 @@ namespace Queue.Controllers
             }
 
         }
-        public JsonResult NewChart(string dateFrom, string dateTo,string idUser,string idDeparment)
-        {            
+        public JsonResult NewChart(string dateFrom, string dateTo, string idUser, string idDeparment)
+        {
             try
             {
-                if (idUser=="0")
+                if (idUser == "0")
                 {
 
-                
-               
-                var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
-                OperationController opc = new OperationController();
-                DateTime fromdate = Convert.ToDateTime(dateFrom);
-                DateTime todate = Convert.ToDateTime(dateTo);
-                BasicUserModel user = opc.GetUsers(company, fromdate, todate);
-                //BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
-                
-                   var  UserByDeparment = db.Agent_Employee.Where(x => x.Agent_CompanyDepartment.Id.ToString() == idDeparment)
-                   .Select(c => c.Usuario).Distinct().ToList();
-                
+
+
+                    var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
+                    OperationController opc = new OperationController();
+                    DateTime fromdate = Convert.ToDateTime(dateFrom);
+                    DateTime todate = Convert.ToDateTime(dateTo);
+                    BasicUserModel user = opc.GetUsers(company, fromdate, todate);
+                    //BasicStatsModel bm = opc.MoreUsedApp(company, fromdate, todate);
+
+                    var UserByDeparment = db.Agent_Employee.Where(x => x.Agent_CompanyDepartment.Id.ToString() == idDeparment)
+                    .Select(c => c.Usuario).Distinct().ToList();
 
 
 
-                var UserDist = user.User.Distinct().ToList();
 
-                List<string> UserFilter = new List<string>();
+                    var UserDist = user.User.Distinct().ToList();
 
-                for (var contUser = 0; contUser < UserByDeparment.Count; contUser++)
-                {
-                    for (var distinct = 0; distinct < UserDist.Count; distinct++)
+                    List<string> UserFilter = new List<string>();
+
+                    for (var contUser = 0; contUser < UserByDeparment.Count; contUser++)
                     {
-                        if (UserByDeparment[contUser] == UserDist[distinct])
+                        for (var distinct = 0; distinct < UserDist.Count; distinct++)
                         {
-                            UserFilter.Add(UserDist[distinct]);
-                        }
-                    }
-                }
-
-                var ApplicationDist = user.Application.Distinct().ToList();
-
-                List<object> iData = new List<object>();
-                //ArrayUsersModel UserModel = new ArrayUsersModel();
-                Random rnd = new Random();
-                string UpdateDate = "";
-                double SumTime = 0;
-
-
-                for (var i = 0; i < UserFilter.Count; i++)
-                {
-                    ArrayUsersModel UserModel = new ArrayUsersModel();
-                    UserModel.User = UserFilter[i];
-
-                    for (var k = 0; k < ApplicationDist.Count; k++)
-                    {
-                        UserModel.Application.Add(ApplicationDist[k]);
-                        for (var cont = 0; cont < user.User.Count; cont++)
-                        {
-                            if (user.User[cont] == UserFilter[i] && user.Application[cont] == ApplicationDist[k])
+                            if (UserByDeparment[contUser] == UserDist[distinct])
                             {
-                                SumTime = SumTime + user.Time[cont];
+                                UserFilter.Add(UserDist[distinct]);
                             }
                         }
-                        var round = SumTime / 3600;
-                        UserModel.Time.Add(round);
-                        SumTime = 0;
-                        //UserModel.Time.Add(rnd.Next(1, 50));
                     }
 
-                    UpdateDate = JsonConvert.SerializeObject(UserModel);
+                    var ApplicationDist = user.Application.Distinct().ToList();
 
-                    iData.Add(UpdateDate);
+                    List<object> iData = new List<object>();
+                    //ArrayUsersModel UserModel = new ArrayUsersModel();
+                    Random rnd = new Random();
+                    string UpdateDate = "";
+                    double SumTime = 0;
 
-                }
-                    
+
+                    for (var i = 0; i < UserFilter.Count; i++)
+                    {
+                        ArrayUsersModel UserModel = new ArrayUsersModel();
+                        UserModel.User = UserFilter[i];
+
+                        for (var k = 0; k < ApplicationDist.Count; k++)
+                        {
+                            UserModel.Application.Add(ApplicationDist[k]);
+                            for (var cont = 0; cont < user.User.Count; cont++)
+                            {
+                                if (user.User[cont] == UserFilter[i] && user.Application[cont] == ApplicationDist[k])
+                                {
+                                    SumTime = SumTime + user.Time[cont];
+                                }
+                            }
+                            var round = SumTime / 3600;
+                            UserModel.Time.Add(round);
+                            SumTime = 0;
+                            //UserModel.Time.Add(rnd.Next(1, 50));
+                        }
+
+                        UpdateDate = JsonConvert.SerializeObject(UserModel);
+
+                        iData.Add(UpdateDate);
+
+                    }
+
                     return Json(iData, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
-                  return  UserbyDepartamentData(dateFrom, dateTo, idUser, idDeparment);
-                     
+                    return UserbyDepartamentData(dateFrom, dateTo, idUser, idDeparment);
+
                 }
-                
+
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 throw err;
-            }            
-            
+            }
+
         }
 
-        
+
         public ActionResult GaugeChart()
         {
             try
@@ -251,7 +251,7 @@ namespace Queue.Controllers
             {
                 throw err;
             }
-            
+
         }
 
         public JsonResult ChartWeb(string dateFrom, string dateTo)
@@ -310,9 +310,9 @@ namespace Queue.Controllers
 
                 throw;
             }
-            
+
         }
-    
+
         public JsonResult ChartImproductive(string dateFrom, string dateTo)
         {
             try
@@ -374,7 +374,7 @@ namespace Queue.Controllers
 
                 throw;
             }
-            
+
         }
     }
 }
