@@ -103,10 +103,10 @@ namespace Queue.Controllers
                 return Json(iData, JsonRequestBehavior.AllowGet);
             
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
         }
@@ -171,7 +171,7 @@ namespace Queue.Controllers
                                 SumTime = SumTime + user.Time[cont];
                             }
                         }
-                        var round = Math.Round((SumTime / 3600), 2);
+                        var round = SumTime / 3600;
                         UserModel.Time.Add(round);
                         SumTime = 0;
                         //UserModel.Time.Add(rnd.Next(1, 50));

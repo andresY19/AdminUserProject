@@ -254,24 +254,26 @@ namespace Queue.Controllers
         }
         public BasicUserModel GetUserByName(string idcompany, DateTime fromdate, DateTime todate,string Name)
         {
-
+            //string fromDate = fromdate.ToString("yyyy-MM-dd");
+            //string toDate = todate.ToString("yyyy-MM-dd");
             BasicUserModel bm = new BasicUserModel();
             var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()
                          where e.IdEmpresa == idcompany
-                         && e.Date >= fromdate && e.Date <= todate 
-                         && e.UserName== Name
+                         && e.Date >= fromdate && e.Date <= todate
+                         && e.UserName == Name
                          select new AutomaticTakeTimeModel
                          {
                              UserName = e.UserName,
                              Application = e.Application,
-                             Time = e.Activity
+                             Time = e.Activity,  
+                             Date= e.Date
                          }).Distinct().ToList();
-
+           
             for (var i = 0; i < query.Count; i++)
             {
                 bm.User.Add(query[i].UserName);
                 bm.Application.Add(query[i].Application);
-                bm.Time.Add((double)query[i].Time);
+                bm.Time.Add((double)query[i].Time);                
             }
             return bm;
         }
