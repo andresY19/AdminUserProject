@@ -279,7 +279,7 @@ namespace Queue.Controllers
         }
         public BasicStatsModel TypeApp(string idcompany)
         {
-            DateTime dateFrom = DateTime.Today.AddDays(-23);
+            DateTime dateFrom = DateTime.Today.AddDays(-50);
             DateTime dateTo = dateFrom.AddHours(23);
             BasicStatsModel bm = new BasicStatsModel();
             var query = (from e in MongoHelper.database.GetCollection<AutomaticTakeTimeModel>("TrackerTime").AsQueryable<AutomaticTakeTimeModel>()

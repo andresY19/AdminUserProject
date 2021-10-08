@@ -201,7 +201,7 @@ namespace Queue.Controllers
 
 
         public ActionResult GaugeChart()
-        {
+         {
             try
             {
                 var company = Request.RequestContext.HttpContext.Session["Company"].ToString();
@@ -350,7 +350,7 @@ namespace Queue.Controllers
                                 //Creating sample data  
                                 DataRow dr = dt.NewRow();
                                 dr["Aplicaciones"] = bm.labels[i].ToString();
-                                dr["Tiempo"] = bm.data[i] * 60;
+                                dr["Tiempo"] = bm.data[i] ;
                                 dt.Rows.Add(dr);
                             }
                         }

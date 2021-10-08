@@ -13,14 +13,16 @@
 
 <!--This page css - Morris CSS -->
 <link href="~/TemplateAssets/assets/plugins/c3-master/c3.min.css" rel="stylesheet">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" type="text/javascript"></script>
+<script src="~/Scripts/c3.min.js"></script>
+<script src="~/Scripts/c3.min.js"></script>
+<script src="~/Scripts/d3.min.js"></script>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"><b>Aplique los filtros necesarios</b></h4>
-                <div class="card-body">
-                    <div class="row button-group">
+                @*<div class="row button-group">
                         <div class="col-lg-2 col-md-4 col-sm-12">
                             <button type="button" id="btn_today" onclick="setStatsView('today')" class="btn btn-block btn-outline-info">Hoy</button>
                         </div>
@@ -39,40 +41,36 @@
                         <div class="col-lg-2 col-md-4 col-sm-12">
                             <button type="button" id="btn_year" onclick="setStatsView('Year')" class="btn btn-block btn-outline-warning">Este Año</button>
                         </div>
-                    </div>
-                    <br /><br />
-                    <div class="row button-group">
-
-                        <div class="col-6">
-                            <h4><b>Filtrar Por empleado</b></h4>
-                            <div class="input-group">
-                                <div class="col-xl-2 col-6 text-center align-self-center mb-20">
-                                    <button type="button" id="btnempfilter" class="btn btn-toggle btn-success" onclick="employeFilter()" data-toggle="button" aria-pressed="true" autocomplete="off">
-                                        <div class="handle"></div>
-                                    </button>
+                    </div>*@
+                <div class="col-md-12 col-xs-12" style="padding:3%">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="row button-group">
+                                    <div class="row col-md-6">
+                                        <div class="col-md-6">
+                                            <label>Fecha desde</label>
+                                            <div class="input-group">
+                                                <input id="DateFrom" type="date" value=2021-10-03 />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Fecha Hasta</label>
+                                            <div class="input-group">
+                                                <input id="DateTo" type="date" value=2021-10-08 />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <br />
                         </div>
-
-                    </div>
-                    <div class="row button-group">
-
-                        <div id="listaempleados" class="col-6">
-                            <h4><b>Empleados</b></h4>
-                            <div class="input-group">
-                                @Html.DropDownList("empleados", new SelectList(ViewBag.empleados, "idEmployee", "Usuario"), new { @class = "form-control required" })
-                            </div>
-                            <br />
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
 
 <section class="content">
     <div class="row">
@@ -114,107 +112,32 @@
                 </div>
             </div>
         </div>
-        <!-- /.col -->
-        @*<div class="col-xl-3 col-md-6 col-12">
-                <div class="flexbox flex-justified text-center bg-danger mb-30 pull-up">
-                    <div class="no-shrink py-30">
-                        <span class="mdi mdi-ticket font-size-50"></span>
-                    </div>
+    <div class="col-xl-4 col-md-6 col-6">
+        <div>
+            <input type="radio" id="rdnProductivo"
+                    name="contact" value="Productivo" checked>
+            <label for="rdnProductivo">Productivo</label>
 
-                    <div class="py-30 bg-white text-dark">
-                        <div class="font-size-30 countnm">964</div>
-                        <span>Pending</span>
-                    </div>
-                </div>
-            </div>*@
-        <!-- /.col -->
-        <div class="col-12 col-lg-4">
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Aplicaciones mas usadas</h3>
-                    <div class="box-tools pull-right">
-                        <ul class="card-controls">
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" href="#"><i class="ion-android-more-vertical"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item active" href="#">Today</a>
-                                    <a class="dropdown-item" href="#">Yesterday</a>
-                                    <a class="dropdown-item" href="#">Last week</a>
-                                    <a class="dropdown-item" href="#">Last month</a>
-                                </div>
-                            </li>
-                            <li><a href="" class="link card-btn-reload" data-toggle="tooltip" title="" data-original-title="Refresh"><i class="mdi mdi-toggle-switch-off-thin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+            <input type="radio" id="rdnImproductivo"
+                    name="contact" value="Improductivo">
+            <label for="rdnImproductivo">Improductivo</label>
 
-                <div class="box-body">
-                    <div class="text-center py-20">
-                        <div id="statslist">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <input type="radio" id="rdnNeutro"
+                    name="contact" value="Neutro">
+            <label for="rdnNeutro">Neutro</label>
+        </div>      
+                    <div class="card">
+                        <div id="GaugeChart"></div>
+                    </div>      
+    </div>
+    <div class="col-md-7 col-sm-12">
+        <div class="card">
+            <canvas id="chartImproductive" style="padding: 0;margin: auto;display: block; "> </canvas>
         </div>
-        <!-- /.col -->
-        <div class="col-12 col-lg-4">
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Improductivas mas usadas</h3>
+    </div>
 
-                    <div class="box-tools pull-right">
-                        <ul class="card-controls">
-                            <li class="dropdown">
-                                <a data-toggle="dropdown" href="#"><i class="ion-android-more-vertical"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item active" href="#">Today</a>
-                                    <a class="dropdown-item" href="#">Yesterday</a>
-                                    <a class="dropdown-item" href="#">Last week</a>
-                                    <a class="dropdown-item" href="#">Last month</a>
-                                </div>
-                            </li>
-                            <li><a href="" class="link card-btn-reload" data-toggle="tooltip" title="" data-original-title="Refresh"><i class="mdi mdi-toggle-switch-off-thin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="box-body">
-                    <div class="flexbox mt-70">
-                        <div class="bar" data-peity='{ "fill": ["#666EE8", "#1E9FF2", "#28D094", "#FF4961", "#FF9149"], "height": 298, "width": 250, "padding":0.2 }'>952,558,1254,427,784</div>
-                        <ul class="list-inline align-self-end text-muted text-right mb-0">
-                            <li>Jacob <span class="badge badge-primary ml-2">952</span></li>
-                            <li>William <span class="badge badge-info ml-2">558</span></li>
-                            <li>Emily <span class="badge badge-success ml-2">1254</span></li>
-                            <li>Chloe <span class="badge badge-danger ml-2">427</span></li>
-                            <li>Daniel <span class="badge badge-warning ml-2">784</span></li>
-                        </ul>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-lg-4 col-12">
-            <!-- AREA CHART -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h4 class="box-title">Ticket Overview</h4>
-                </div>
-                <div class="box-body">
-                    <ul class="list-inline text-right mt-10 mr-10">
-                        <li>
-                            <h5 class="mb-0"><i class="mdi mdi-toggle-switch-off mr-5 text-info"></i>Total</h5>
-                        </li>
-                        <li>
-                            <h5 class="mb-0"><i class="mdi mdi-toggle-switch-off mr-5 text-danger"></i>Close</h5>
-                        </li>
-                    </ul>
-                    <div id="morris-area-chart2" style="height: 330px;"></div>
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
         <!-- /.col -->
         <div class="col-lg-4 col-12">
             <div class="box">
@@ -789,10 +712,22 @@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script>
 
-    jQuery(document).ready(function () {
-        $("#listaempleados").hide();
-        MoreUsedApp();
+    jQuery(document).ready(async function () {
+        /*$("#listaempleados").hide();*/
+        /*MoreUsedApp();*/
+        var parameter = await {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val(),
+        };
+        var variable = $("input:radio[name=contact]:checked").val();
+        //ReportWebApplications(parameter);
+        await ReportImproductiveApplications(parameter); 
+        await ReportSpedometer(variable);
     });
+    //var myNewChart = null;
+    //var barChart = null;
+    //var ChartWeb = null;
+    var ChartImproductive = null;
 
     function employeFilter() {
         if (!$("#btnempfilter").hasClass("active")) {
@@ -855,6 +790,242 @@
             }
         });
     }
+    $("input:radio[name=contact]").click(function () {
+        var variable = $("input:radio[name=contact]:checked").val();
+
+        switch (variable) {
+            case 'Productivo':
+                ReportSpedometer(variable)
+                break;
+            case 'Improductivo':
+                ReportSpedometer(variable)
+                break;
+            case 'Neutro':
+                ReportSpedometer(variable)
+                break;
+            default:
+                break;
+        }
+    })
+    async function ReportSpedometer(variable) {
+        $.ajax({
+            type: "GET",
+            url: "/ReportApplications/GaugeChart",           
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                successFunc(response);
+            },
+        });
+
+        function successFunc(jsondata) {
+            switch (variable) {
+                case 'Productivo':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Productivo', jsondata.Productivo]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Female', jsondata.Male]
+                    //        ]
+                    //    });
+                    //}, 1000);
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Others', jsondata.Others]
+                    //        ]
+                    //    });
+                    //}, 2000);
+                    break;
+                case 'Improductivo':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Improductivo', jsondata.Improductivo]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Female', jsondata.Male]
+                    //        ]
+                    //    });
+                    //}, 1000);
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Others', jsondata.Others]
+                    //        ]
+                    //    });
+                    //}, 2000);
+                    break;
+                case 'Neutro':
+                    var ratio = false;
+                    var chart = c3.generate({
+                        bindto: '#GaugeChart',
+                        data: {
+                            columns: [
+                                ['Neutro', jsondata.Neutro]
+                            ],
+                            type: 'gauge',
+                            onmouseover: function (d, i) {
+                                console.log(d);
+                            },
+                        },
+                        gauge: {
+                            max: jsondata.Total,
+                            //label: {
+                            //    format: function (value, ratio) {
+                            //        return value;
+                            //    },
+                            //    show: false
+                            //    },
+                            //units: ' %',
+                            //label: false,
+                            //show: false
+                        },
+                        color: {
+                            pattern: ['#FF0000', '#F97600', '#ccff66'],
+                        },
+                    });
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Female', jsondata.Male]
+                    //        ]
+                    //    });
+                    //}, 1000);
+                    //setTimeout(function () {
+                    //    chart.load({
+                    //        columns: [
+                    //            ['Others', jsondata.Others]
+                    //        ]
+                    //    });
+                    //}, 2000);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    function ReportImproductiveApplications(parameter) {
+        $.ajax({
+            type: "POST",
+            url: "/ReportApplications/ChartImproductive",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(parameter),
+            success: function (chData) {
+                var aData = chData;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Aplicaciones",
+                        data: aDatasets1,
+                        fill: false,
+                        display: false,
+                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                if (ChartImproductive != null) {
+                    ChartImproductive.destroy();
+                }
+                var ctx = $("#chartImproductive").get(0).getContext("2d");
+                ChartImproductive = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'APLICACIONES IMPRODUCTIVAS MAS USADAS' },
+                        legend: { position: 'bottom', display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+                ChartImproductive.update();
+            }
+        });
+    }
+    $('#DateFrom').change(async function () {
+        var parameter = {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val()
+            //idDeparment: $("#Id").val(),
+            //idUser: $("#ddlUser").val()
+        };
+
+        /*ReportMoreApplications(parameter);*/
+        //ReportWebApplications(parameter);
+        await ReportImproductiveApplications(parameter);
+    });
+
+    $('#DateTo').change(async function () {
+        var parameter = {
+            dateFrom: $("#DateFrom").val(),
+            dateTo: $("#DateTo").val(),
+            //idDeparment: $("#Id").val(),
+            //idUser: $("#ddlUser").val()
+        };
+
+       /* ReportMoreApplications(parameter);*/
+        //ReportWebApplications(parameter);
+        await ReportImproductiveApplications(parameter);
+    })
 </script>
 
 @section Scripts {
