@@ -359,6 +359,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\ReportApplicationsController.cs" />
+    <Compile Include="Controllers\ReportGanttController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
@@ -14515,6 +14516,7 @@
     <Content Include="Views\ReportApplications\Index.cshtml" />
     <Content Include="Views\MainApplicationsAndSites\Index.cshtml" />
     <Content Include="Views\MoreUsedApplications\Index.cshtml" />
+    <Content Include="Views\ReportGantt\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\FilesRepository\" />
